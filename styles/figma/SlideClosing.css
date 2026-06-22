@@ -11,24 +11,6 @@
   justify-content: center;
 }
 
-.figma-closing__airplane {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  height: 90%;
-  max-width: 100%;
-  background-image: url("/images/figma/KKMD-2022-3.png");
-  background-size: contain;
-  background-position: center bottom;
-  background-repeat: no-repeat;
-  mix-blend-mode: screen;
-  opacity: 0.95;
-  pointer-events: none;
-  z-index: 1;
-}
-
 /* Frame 447 - Content Frame */
 .figma-closing__content-frame {
   position: relative;
@@ -124,7 +106,7 @@
   line-height: 1.2;
   text-align: center;
   letter-spacing: -0.02em;
-  color: #151D5B;
+  color: #000000;
   margin: 0;
 }
 
@@ -139,24 +121,103 @@
   line-height: 1.25;
   text-align: center;
   letter-spacing: -0.02em;
-  color: #151D5B;
+  color: #000000;
   margin: 0;
   align-self: stretch;
 }
 
 .figma-closing__main-title strong {
   font-weight: 700;
-  color: #151D5B;
+  color: #0F2380;
+}
+
+.figma-closing__main-title-accent {
+  color: #0F2380;
+}
+
+.figma-closing.is-step-1 .figma-closing__top-frame,
+.figma-closing.is-step-1 .figma-closing__title-group {
+  opacity: 1;
+  filter: none;
+  transform: none;
+}
+
+.figma-closing__stage {
+  position: relative;
+  width: min(100%, 1150px);
+  min-height: clamp(190px, 25vh, 254px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.figma-closing__loop-svg-wrap {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(18px);
+  pointer-events: none;
+  transition:
+    opacity 0.95s ease 1100ms,
+    transform 1.05s cubic-bezier(.22, 1, .36, 1) 1100ms;
+}
+
+.figma-closing.on .figma-closing__loop-svg-wrap {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.figma-closing.is-step-1 .figma-closing__loop-svg-wrap {
+  opacity: 0;
+  transform: translateY(-18px);
+  filter: blur(10px);
+  transition:
+    opacity 0.75s ease,
+    transform 0.9s cubic-bezier(.22, 1, .36, 1),
+    filter 0.75s ease;
+}
+
+.figma-closing__loop-svg {
+  display: block;
+  width: min(100%, 1150px);
+  height: auto;
+  image-rendering: auto;
 }
 
 /* Frame 446 - Bottom Container */
 .figma-closing__bottom-frame {
+  position: absolute;
+  inset: 0;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: clamp(20px, 4.5vh, 37px);
+  justify-content: center;
   width: 100%;
   max-width: 1149.46px;
+  opacity: 0;
+  transform: translateY(26px);
+  filter: blur(12px);
+  pointer-events: none;
+  transition:
+    opacity 1s ease,
+    transform 1.15s cubic-bezier(.22, 1, .36, 1),
+    filter 1s ease;
+  transition-delay: 140ms;
+}
+
+.figma-closing.is-step-1 .figma-closing__bottom-frame {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+  pointer-events: auto;
+}
+
+.figma-closing__bottom-svg {
+  display: block;
+  width: min(100%, 1150px);
+  height: auto;
 }
 
 /* Frame 323 */
