@@ -1,6 +1,11 @@
 /* ---------- alphago (page 15) ---------- */
 .figma-alphago {
-  background: #E0E7EF; /* light blue background */
+  background:
+    radial-gradient(97.06% 44.5% at 50% -1.51%, rgba(255, 255, 255, 0.42) 0%, rgba(201, 220, 255, 0.42) 34.62%, rgba(146, 185, 255, 0.42) 62.02%, rgba(146, 185, 255, 0) 100%),
+    radial-gradient(37.03% 40.43% at 102.35% 22.58%, rgba(77, 109, 255, 0.6) 12.02%, rgba(161, 227, 255, 0.06) 88.94%),
+    radial-gradient(33.51% 39.62% at -2.82% 23.22%, rgba(77, 109, 255, 0.6) 12.21%, rgba(161, 227, 255, 0.06) 88%),
+    radial-gradient(88.19% 104.55% at 50% 104.55%, rgba(255, 255, 255, 0.45) 0%, rgba(148, 175, 255, 0.45) 41.37%, rgba(47, 121, 255, 0.45) 74.42%, rgba(157, 191, 255, 0.45) 100%),
+    #FFFFFF;
   position: relative;
   overflow: hidden;
 }
@@ -8,6 +13,12 @@
 .figma-alphago__bg {
   position: absolute;
   inset: 0;
+  background:
+    radial-gradient(97.06% 44.5% at 50% -1.51%, rgba(255, 255, 255, 0.42) 0%, rgba(201, 220, 255, 0.42) 34.62%, rgba(146, 185, 255, 0.42) 62.02%, rgba(146, 185, 255, 0) 100%),
+    radial-gradient(37.03% 40.43% at 102.35% 22.58%, rgba(77, 109, 255, 0.6) 12.02%, rgba(161, 227, 255, 0.06) 88.94%),
+    radial-gradient(33.51% 39.62% at -2.82% 23.22%, rgba(77, 109, 255, 0.6) 12.21%, rgba(161, 227, 255, 0.06) 88%),
+    radial-gradient(88.19% 104.55% at 50% 104.55%, rgba(255, 255, 255, 0.45) 0%, rgba(148, 175, 255, 0.45) 41.37%, rgba(47, 121, 255, 0.45) 74.42%, rgba(157, 191, 255, 0.45) 100%),
+    #FFFFFF;
   overflow: hidden;
   pointer-events: none;
   z-index: 0;
@@ -18,19 +29,24 @@
   position: absolute;
   top: 56%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(calc(-50% + 35px), calc(-50% + 150px));
   width: 100%;
-  max-width: 800px;
-  height: 440px;
-  opacity: 0.3;
+  max-width: 1040px;
+  height: 470px;
+  opacity: 0;
   pointer-events: none;
   z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;
   mix-blend-mode: multiply;
-  mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 80%);
-  -webkit-mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 80%);
+  mask-image: none;
+  -webkit-mask-image: none;
+  transition: opacity 950ms ease 1120ms;
+}
+
+.figma-alphago.on .figma-alphago__bg-image-wrapper {
+  opacity: 1;
 }
 
 .figma-alphago__bg-image {
@@ -46,10 +62,47 @@
   justify-content: flex-start;
   height: 100%;
   box-sizing: border-box;
-  padding-top: clamp(40px, 6vh, 60px);
+  padding-top: clamp(72px, 10vh, 110px);
   padding-bottom: clamp(30px, 4vh, 45px);
   z-index: 2;
   position: relative;
+}
+
+.figma-alphago__header-svg {
+  display: block;
+  width: min(78vw, 1176px);
+  height: auto;
+  overflow: visible;
+}
+
+.figma-alphago__svg-tag,
+.figma-alphago__svg-title,
+.figma-alphago__svg-subtitle {
+  opacity: 0;
+  transform: translateY(16px);
+  transform-box: fill-box;
+  transform-origin: center;
+  transition:
+    opacity 850ms ease,
+    transform 1000ms cubic-bezier(.22, 1, .36, 1);
+}
+
+.figma-alphago.on .figma-alphago__svg-tag {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 180ms;
+}
+
+.figma-alphago.on .figma-alphago__svg-title {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 620ms;
+}
+
+.figma-alphago.on .figma-alphago__svg-subtitle {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 1120ms;
 }
 
 /* Why · 왜 지금? pill */

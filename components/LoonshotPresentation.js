@@ -30,6 +30,7 @@ import SlideAnnexCostCurve from "@/components/slides/SlideAnnexCostCurve";
 import SlideAnnexMilestone from "@/components/slides/SlideAnnexMilestone";
 import SlideAnnexRenderSmith from "@/components/slides/SlideAnnexRenderSmith";
 import SlideAnnexPayoff from "@/components/slides/SlideAnnexPayoff";
+import SlidePage28 from "@/components/slides/SlidePage28";
 
 export default function LoonshotPresentation() {
   const deckRef = useRef(null);
@@ -78,7 +79,7 @@ export default function LoonshotPresentation() {
         <SlidePilot />
         <SlideFrame255 />
         <SlideClosing />
-        <SlideAnnexIntro />
+        <SlideAlphaGo />
         <SlideAnnexValueChainShift />
         <SlideAnnexConductor />
         <SlideAnnexDesignAIWorkflow />
@@ -86,7 +87,8 @@ export default function LoonshotPresentation() {
         <SlideAnnexCostCurve />
         <SlideAnnexMilestone />
         <SlideAnnexPayoff />
-        <SlideAlphaGo />
+        <SlideAnnexIntro />
+        <SlidePage28 />
         <div className="deck-rest" dangerouslySetInnerHTML={{ __html: deckSlidesRestHtml }} />
       </main>
     </>
