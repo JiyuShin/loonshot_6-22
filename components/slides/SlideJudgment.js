@@ -1,4 +1,5 @@
 import JudgmentRightPanelSvg from "@/components/slides/JudgmentRightPanelSvg";
+import JudgmentTopBadgeSvg from "@/components/slides/JudgmentTopBadgeSvg";
 
 export default function SlideJudgment() {
   return (
@@ -10,9 +11,7 @@ export default function SlideJudgment() {
       </div>
 
       <div className="figma-slide__inner figma-judgment__content">
-        <div className="figma-pill rv" style={{ "--rd": "250ms" }}>
-          자동 품질 향상 · 거버넌스
-        </div>
+        <JudgmentTopBadgeSvg className="figma-judgment__top-badge rv" style={{ "--rd": "250ms" }} />
 
         <h2 className="figma-judgment__headline rv head" style={{ "--rd": "600ms" }}>
           <span>

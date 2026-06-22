@@ -1,4 +1,5 @@
 import ClaimRoleDiagramSvg from "./ClaimRoleDiagramSvg";
+import ClaimTagSvg from "./ClaimTagSvg";
 
 export default function SlideClaim() {
   return (
@@ -8,17 +9,21 @@ export default function SlideClaim() {
       data-title="디자이너의 역할 변화"
     >
       <img
-        className="figma-claim__bg-image"
-        src="/f4.png"
+        className="figma-claim__side-image figma-claim__side-image--left"
+        src="/m1.png"
+        alt=""
+        aria-hidden="true"
+      />
+      <img
+        className="figma-claim__side-image figma-claim__side-image--right"
+        src="/m2.png"
         alt=""
         aria-hidden="true"
       />
 
       <div className="figma-slide__inner figma-claim__content">
         <div className="figma-claim__header">
-          <div className="figma-pill rv soft" style={{ "--rd": "250ms" }}>
-            디자이너의 역할 변화
-          </div>
+          <ClaimTagSvg className="rv soft" style={{ "--rd": "250ms" }} />
 
           <h2 className="figma-claim__headline rv head" style={{ "--rd": "600ms" }}>
             <span className="figma-claim__headline-muted">디자이너, </span>
