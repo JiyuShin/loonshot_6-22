@@ -1,0 +1,876 @@
+/* ============================================================
+   PROJECT LOONSHOT — SlideAnnexMilestone (Page 25) Styles
+   ============================================================ */
+
+.figma-annex-milestone {
+  background: #ffffff;
+  overflow: hidden;
+  position: relative;
+}
+
+.figma-annex-milestone__bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(82.19% 129.83% at 0% 0%, rgba(255, 255, 255, 0.47) 0%, rgba(47, 121, 255, 0.47) 45.98%, rgba(182, 194, 255, 0.47) 100%), #FFFFFF;
+  transform: matrix(1, 0, 0, -1, 0, 0);
+  z-index: 1;
+}
+
+.figma-annex-milestone__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  padding: 0 !important;
+  position: relative;
+  z-index: 2;
+}
+
+/* ============================================================
+   Desktop Layout (>= 1201px) matching Figma coordinates exactly
+   ============================================================ */
+@media (min-width: 1201px) {
+  .figma-annex-milestone__main {
+    position: absolute;
+    width: 1192.54px;
+    height: 900px; /* Expanded main area height to elegantly contain bottom-aligned elements */
+    left: calc(50% - 1192.54px / 2);
+    top: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    transform: scale(0.85);
+    transform-origin: top center;
+  }
+
+  .figma-annex-milestone__top-frame {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 20px;
+    width: 1192.54px;
+    height: auto;
+  }
+
+  .figma-annex-milestone__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 12px;
+    width: 1192.54px;
+    height: auto;
+  }
+
+  .figma-annex-milestone__sub-pill {
+    width: 1192.54px;
+    height: 30px;
+    font-family: 'Pretendard', var(--sans);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 27.8665px;
+    line-height: 29px;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: #033875;
+  }
+
+  .figma-annex-milestone__title-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 10px;
+    width: 1192.54px;
+    height: auto;
+  }
+
+  .figma-annex-milestone__main-title {
+    width: 746px;
+    height: 70px;
+    font-family: 'Pretendard', var(--sans);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 55.792px;
+    line-height: 125%;
+    letter-spacing: -0.02em;
+    color: #002C5F;
+    margin: 0;
+    text-align: center;
+  }
+
+  .figma-annex-milestone__description {
+    width: 1087.53px;
+    height: 70px;
+    font-family: 'Pretendard', var(--sans);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 23.2834px;
+    line-height: 35px;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: #000000;
+    margin: 0;
+  }
+
+  /* Timelines Frame (Frame 424) */
+  .figma-annex-milestone__timelines {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 20px;
+    width: 1192.54px;
+    height: 162px;
+  }
+
+  /* As-is Timeline (Frame 192) */
+  .figma-annex-milestone__timeline-row--asis {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 44.75px;
+    width: 1171px;
+    height: 70.14px;
+    position: relative;
+  }
+
+  /* To-be Timeline (Frame 191) */
+  .figma-annex-milestone__timeline-row--tobe {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 44.75px;
+    width: 1192.54px;
+    height: 71.49px;
+    position: relative;
+    margin-top: 10px;
+  }
+
+  .figma-annex-milestone__timeline-label {
+    width: 59.66px;
+    height: 29px;
+    font-family: 'Pretendard', var(--sans);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 17.1668px;
+    line-height: 28px;
+    color: #033875;
+    padding-top: 2px;
+  }
+
+  .figma-annex-milestone__timeline-track-wrap {
+    width: 1067.59px;
+    height: 100%;
+    position: relative;
+  }
+
+  /* Timeline Horizontal Lines */
+  .figma-annex-milestone__timeline-row--asis .figma-annex-milestone__timeline-line {
+    position: absolute;
+    width: 1067.59px;
+    height: 0px;
+    left: 0px;
+    top: 6.99px;
+    border-top: 1.48493px solid #002C5F;
+  }
+
+  .figma-annex-milestone__timeline-row--tobe .figma-annex-milestone__timeline-line {
+    position: absolute;
+    width: 1067.59px;
+    height: 0px;
+    left: 0px;
+    top: 7.17px;
+    border-top: 1.48493px solid #002C5F;
+  }
+
+  /* Timeline Items Containers */
+  .figma-annex-milestone__timeline-row--asis .figma-annex-milestone__timeline-items {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 80px;
+    position: absolute;
+    width: 976.3px;
+    height: 70.14px;
+    left: 63.9px; /* offset precisely relative to line start */
+    top: 0px;
+  }
+
+  .figma-annex-milestone__timeline-row--tobe .figma-annex-milestone__timeline-items {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 91px;
+    position: absolute;
+    width: 941.05px;
+    height: 71.49px;
+    left: 64.41px; /* offset precisely relative to line start */
+    top: 0px;
+  }
+
+  /* Individual Timeline Item Nodes */
+  .figma-annex-milestone__timeline-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    position: relative;
+  }
+
+  .figma-annex-milestone__timeline-row--asis .figma-annex-milestone__timeline-item {
+    width: 59.66px; /* standard width */
+    height: 70.14px;
+    gap: 4.07px;
+  }
+
+  /* M-20, M0, M+9, M+19 are wider */
+  .figma-annex-milestone__timeline-row--asis .figma-annex-milestone__timeline-item:nth-child(2) { width: 74.58px; }
+  .figma-annex-milestone__timeline-row--asis .figma-annex-milestone__timeline-item:nth-child(5) { width: 74.58px; }
+  .figma-annex-milestone__timeline-row--asis .figma-annex-milestone__timeline-item:nth-child(6) { width: 82.72px; }
+  .figma-annex-milestone__timeline-row--asis .figma-annex-milestone__timeline-item:nth-child(7) { width: 85.43px; }
+
+  .figma-annex-milestone__timeline-row--tobe .figma-annex-milestone__timeline-item {
+    width: 59.66px;
+    height: 71.49px;
+    gap: 5.42px;
+  }
+
+  .figma-annex-milestone__node {
+    box-sizing: border-box;
+    width: 14.85px;
+    height: 14.85px;
+    background: #FFFFFF;
+    border: 1.40605px solid #002C5F;
+    border-radius: 50%;
+    z-index: 3;
+    flex-shrink: 0;
+  }
+
+  .figma-annex-milestone__node.highlight-node {
+    background: #4066FF;
+    border: 1.40605px solid #002C5F;
+  }
+
+  .figma-annex-milestone__item-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    width: 100%;
+    height: 51.22px;
+    flex-shrink: 0;
+  }
+
+  .figma-annex-milestone__code {
+    font-family: 'Pretendard', var(--sans);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17.1672px;
+    line-height: 28px;
+    text-align: center;
+    color: #002C5F;
+    opacity: 0.5;
+    margin-top: -6.78px;
+    margin-bottom: -6.78px;
+    white-space: nowrap;
+  }
+
+  .figma-annex-milestone__name {
+    font-family: 'Pretendard', var(--sans);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 17.1672px;
+    line-height: 28px;
+    text-align: center;
+    color: #000000;
+    white-space: nowrap;
+  }
+
+  .figma-annex-milestone__name.highlight-name {
+    color: #1A3CC5;
+  }
+
+  /* Bottom Frame Structure (Frame 421) */
+  .figma-annex-milestone__bottom-frame {
+    width: 1192.54px;
+    height: 371.58px;
+    position: relative;
+    margin-top: 10px;
+  }
+
+  .figma-annex-milestone__split-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end; /* Align components to the bottom to move second image contents down */
+    padding: 0px;
+    gap: 61px;
+    position: absolute;
+    width: 1192.54px;
+    height: 335.08px;
+    left: 0px;
+    top: 30px; /* Shifted the content area down */
+  }
+
+  /* War Room Diagram (Frame 383 & 339 & 101) */
+  .figma-annex-milestone__warroom-diagram {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15.97px 10.86px;
+    gap: 15.97px;
+    width: 340.46px;
+    height: 335.08px;
+    box-sizing: border-box;
+  }
+
+  .figma-annex-milestone__circle-container {
+    width: 318.74px;
+    height: 303.14px;
+    position: relative;
+  }
+
+  .figma-annex-milestone__circle-text {
+    position: absolute;
+    width: 110px;
+    height: 23px;
+    left: calc(50% - 110px / 2 + 0.33px);
+    top: 139.88px;
+    font-family: 'Pretendard', var(--sans);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20.4401px;
+    line-height: 23px;
+    text-align: center;
+    color: #151D5B;
+    z-index: 10;
+  }
+
+  /* 8 Circular nodes absolute coordinates precisely mapped */
+  .figma-annex-milestone__circle-node {
+    position: absolute;
+    width: 65.15px;
+    height: 65.15px;
+    background: linear-gradient(180deg, #A7BADC 0%, #FFFFFF 100%);
+    box-shadow: inset 0px 1.75px 8.59px #FFFFFF;
+    border-radius: 31.94px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  .figma-annex-milestone__circle-node span {
+    font-family: 'Pretendard', var(--sans);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10.5174px;
+    line-height: 100%;
+    color: #4D74AF;
+    display: block;
+    word-break: keep-all;
+  }
+
+  .figma-annex-milestone__circle-node.pm { left: 128.34px; top: 0px; }
+  .figma-annex-milestone__circle-node.manufacturing { left: 40.19px; top: 21.07px; }
+  .figma-annex-milestone__circle-node.quality { left: 217.12px; top: 28.74px; }
+  .figma-annex-milestone__circle-node.product { left: -0.05px; top: 115.61px; }
+  .figma-annex-milestone__circle-node.regional-hq { left: 256.09px; top: 115.61px; }
+  .figma-annex-milestone__circle-node.engineering { left: 40.19px; top: 201.84px; }
+  .figma-annex-milestone__circle-node.procurement { left: 217.12px; top: 203.12px; }
+  .figma-annex-milestone__circle-node.design { left: 128.34px; top: 246.56px; }
+
+  /* Q&A Section (Frame 422) */
+  .figma-annex-milestone__qna-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 37px;
+    width: 754px;
+    height: 194.22px;
+  }
+
+  .figma-annex-milestone__qna-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 22px;
+    width: 754px;
+    height: 112px;
+  }
+
+  .figma-annex-milestone__qna-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    height: 36px;
+  }
+
+  .figma-annex-milestone__qna-row.row-question {
+    gap: 82px;
+    width: 708px;
+  }
+
+  .figma-annex-milestone__qna-row.row-answer {
+    gap: 62px;
+    width: 640.96px;
+    padding-left: 23px;
+  }
+
+  .figma-annex-milestone__qna-label-wrap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 12px;
+    height: 36px;
+    flex-shrink: 0;
+  }
+
+  .figma-annex-milestone__bullet {
+    width: 10.96px;
+    height: 10.96px;
+    background: #151D5B;
+    border-radius: 50%;
+  }
+
+  .figma-annex-milestone__qna-title {
+    height: 36px;
+    font-family: 'Pretendard', var(--sans);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 23.5302px;
+    line-height: 35px;
+    text-align: left;
+    color: #151D5B;
+    white-space: nowrap;
+  }
+
+  .figma-annex-milestone__qna-row.row-question .figma-annex-milestone__qna-title {
+    width: 87px;
+  }
+
+  .figma-annex-milestone__qna-row.row-answer .figma-annex-milestone__qna-title {
+    width: 108px;
+  }
+
+  .figma-annex-milestone__qna-content {
+    height: 36px;
+    font-family: 'Pretendard', var(--sans);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 23.5302px;
+    line-height: 35px;
+    text-align: left;
+    color: #151D5B;
+    white-space: nowrap;
+  }
+
+  .figma-annex-milestone__qna-row.row-question .figma-annex-milestone__qna-content {
+    width: 487px;
+  }
+
+  .figma-annex-milestone__qna-row.row-answer .figma-annex-milestone__qna-content {
+    width: 403px;
+  }
+
+  .figma-annex-milestone__divider {
+    width: 708px;
+    height: 0px;
+    border-top: 1px solid #5679AF;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Tags Block (Frame 209) */
+  .figma-annex-milestone__tags {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 31.52px;
+    width: 432.01px;
+    height: 45.22px;
+  }
+
+  .figma-annex-milestone__tag {
+    height: 45.22px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.8) 100%);
+    border-radius: 13.704px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Pretendard', var(--sans);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 19.1856px;
+    line-height: 35px;
+    text-align: center;
+    color: #151D5B;
+    box-sizing: border-box;
+    box-shadow: 0px 2px 8px rgba(21, 29, 91, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+  }
+
+  .figma-annex-milestone__tag:nth-child(1) { width: 129.15px; }
+  .figma-annex-milestone__tag:nth-child(2) { width: 102.78px; }
+  .figma-annex-milestone__tag:nth-child(3) { width: 137.04px; }
+
+  /* Subtitle Bottom Bar (Frame 70 & 69) */
+  .figma-annex-milestone__footer-bar {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 19.49px;
+    position: absolute;
+    width: 622.28px;
+    height: 86.98px;
+    left: calc(50% - 622.28px / 2); /* Centered horizontally */
+    top: 385px; /* Moved down to the bottom of the content area */
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.4752) 100%);
+    filter: drop-shadow(0px 4px 44.5px rgba(255, 255, 255, 0.49));
+    border-radius: 25.4516px;
+    border: 1.5px solid rgba(255, 255, 255, 0.6);
+  }
+
+  .figma-annex-milestone__footer-text {
+    width: 583.3px;
+    height: 48px;
+    font-family: 'Pretendard', var(--sans);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32.0187px;
+    line-height: 150%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: #151D5B;
+  }
+}
+
+/* ============================================================
+   Reveal Animations (Seamless transition & elegant feel)
+   ============================================================ */
+/* Standard reveal transitions are handled automatically by the global .rv and .slide.on classes in deck.css */
+
+/* Delay configurations for child elements inside timeline/diagram for extra polish */
+.figma-annex-milestone__timeline-row--asis .figma-annex-milestone__timeline-item {
+  opacity: 0;
+  transform: scale(0.9) translateY(10px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.slide.on .figma-annex-milestone__timeline-row--asis .figma-annex-milestone__timeline-item {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+/* Stagger timeline items */
+.figma-annex-milestone__timeline-row--asis .figma-annex-milestone__timeline-item:nth-child(1) { transition-delay: calc(var(--rd, 700ms) + 100ms); }
+.figma-annex-milestone__timeline-row--asis .figma-annex-milestone__timeline-item:nth-child(2) { transition-delay: calc(var(--rd, 700ms) + 180ms); }
+.figma-annex-milestone__timeline-row--asis .figma-annex-milestone__timeline-item:nth-child(3) { transition-delay: calc(var(--rd, 700ms) + 260ms); }
+.figma-annex-milestone__timeline-row--asis .figma-annex-milestone__timeline-item:nth-child(4) { transition-delay: calc(var(--rd, 700ms) + 340ms); }
+.figma-annex-milestone__timeline-row--asis .figma-annex-milestone__timeline-item:nth-child(5) { transition-delay: calc(var(--rd, 700ms) + 420ms); }
+.figma-annex-milestone__timeline-row--asis .figma-annex-milestone__timeline-item:nth-child(6) { transition-delay: calc(var(--rd, 700ms) + 500ms); }
+.figma-annex-milestone__timeline-row--asis .figma-annex-milestone__timeline-item:nth-child(7) { transition-delay: calc(var(--rd, 700ms) + 580ms); }
+
+.figma-annex-milestone__timeline-row--tobe .figma-annex-milestone__timeline-item {
+  opacity: 0;
+  transform: scale(0.9) translateY(10px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.slide.on .figma-annex-milestone__timeline-row--tobe .figma-annex-milestone__timeline-item {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+.figma-annex-milestone__timeline-row--tobe .figma-annex-milestone__timeline-item:nth-child(1) { transition-delay: calc(var(--rd, 900ms) + 100ms); }
+.figma-annex-milestone__timeline-row--tobe .figma-annex-milestone__timeline-item:nth-child(2) { transition-delay: calc(var(--rd, 900ms) + 180ms); }
+.figma-annex-milestone__timeline-row--tobe .figma-annex-milestone__timeline-item:nth-child(3) { transition-delay: calc(var(--rd, 900ms) + 260ms); }
+.figma-annex-milestone__timeline-row--tobe .figma-annex-milestone__timeline-item:nth-child(4) { transition-delay: calc(var(--rd, 900ms) + 340ms); }
+.figma-annex-milestone__timeline-row--tobe .figma-annex-milestone__timeline-item:nth-child(5) { transition-delay: calc(var(--rd, 900ms) + 420ms); }
+.figma-annex-milestone__timeline-row--tobe .figma-annex-milestone__timeline-item:nth-child(6) { transition-delay: calc(var(--rd, 900ms) + 500ms); }
+.figma-annex-milestone__timeline-row--tobe .figma-annex-milestone__timeline-item:nth-child(7) { transition-delay: calc(var(--rd, 900ms) + 580ms); }
+
+
+/* ============================================================
+   Mobile & Tablet Responsive Layout (< 1200px)
+   ============================================================ */
+@media (max-width: 1200px) {
+  .figma-annex-milestone__content {
+    padding: 40px 24px !important;
+    overflow-y: auto;
+  }
+
+  .figma-annex-milestone__main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .figma-annex-milestone__top-frame {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .figma-annex-milestone__header {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .figma-annex-milestone__sub-pill {
+    font-size: clamp(14px, 2.2vw, 20px);
+    line-height: 1.3;
+    color: #033875;
+    font-weight: 600;
+  }
+
+  .figma-annex-milestone__title-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .figma-annex-milestone__main-title {
+    font-size: clamp(24px, 4.5vw, 42px);
+    line-height: 1.25;
+    color: #002C5F;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .figma-annex-milestone__description {
+    font-size: clamp(14px, 1.8vw, 17px);
+    line-height: 1.5;
+    color: #4a5270;
+    margin: 0;
+    max-width: 90%;
+  }
+
+  /* Responsive Timelines (Stacked layouts or scrollable) */
+  .figma-annex-milestone__timelines {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .figma-annex-milestone__timeline-row {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .figma-annex-milestone__timeline-label {
+    font-weight: 700;
+    font-size: 16px;
+    color: #033875;
+  }
+
+  .figma-annex-milestone__timeline-track-wrap {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 12px;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .figma-annex-milestone__timeline-line {
+    position: absolute;
+    height: 1.5px;
+    background-color: #002C5F;
+    left: 0;
+    width: max(100%, 800px);
+    top: 7px;
+  }
+
+  .figma-annex-milestone__timeline-items {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    width: max-content;
+    padding-left: 10px;
+    position: relative;
+  }
+
+  .figma-annex-milestone__timeline-item {
+    width: 90px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .figma-annex-milestone__node {
+    width: 14px;
+    height: 14px;
+    background: #ffffff;
+    border: 1.5px solid #002C5F;
+    border-radius: 50%;
+    z-index: 2;
+  }
+
+  .figma-annex-milestone__node.highlight-node {
+    background: #4066FF;
+  }
+
+  .figma-annex-milestone__item-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .figma-annex-milestone__code {
+    font-size: 13px;
+    font-weight: 500;
+    color: #002C5F;
+    opacity: 0.6;
+  }
+
+  .figma-annex-milestone__name {
+    font-size: 13px;
+    font-weight: 600;
+    color: #000000;
+    text-align: center;
+  }
+
+  .figma-annex-milestone__name.highlight-name {
+    color: #1A3CC5;
+  }
+
+  /* Responsive Bottom frame */
+  .figma-annex-milestone__bottom-frame {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .figma-annex-milestone__split-wrap {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+  }
+
+  /* War Room layout scaled slightly */
+  .figma-annex-milestone__warroom-diagram {
+    width: 320px;
+    height: 310px;
+    transform: scale(0.95);
+  }
+
+  /* Q&A mobile scaling */
+  .figma-annex-milestone__qna-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .figma-annex-milestone__qna-box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: auto;
+  }
+
+  .figma-annex-milestone__qna-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px !important;
+    height: auto;
+    padding-left: 0 !important;
+  }
+
+  .figma-annex-milestone__qna-label-wrap {
+    height: auto;
+  }
+
+  .figma-annex-milestone__qna-title {
+    font-size: 18px;
+    line-height: 1.3;
+    text-align: left;
+    width: auto !important;
+  }
+
+  .figma-annex-milestone__qna-content {
+    font-size: 18px;
+    line-height: 1.4;
+    white-space: normal;
+    text-align: left;
+    width: auto !important;
+  }
+
+  .figma-annex-milestone__divider {
+    width: 100%;
+  }
+
+  .figma-annex-milestone__tags {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    height: auto;
+  }
+
+  .figma-annex-milestone__tag {
+    font-size: 14px;
+    height: auto;
+    padding: 8px 16px;
+    width: auto !important;
+  }
+
+  /* Footer bar in mobile */
+  .figma-annex-milestone__footer-bar {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    padding: 16px;
+    margin-top: 10px;
+  }
+
+  .figma-annex-milestone__footer-text {
+    width: 100%;
+    height: auto;
+    font-size: 20px;
+    line-height: 1.4;
+  }
+}

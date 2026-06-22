@@ -1,0 +1,127 @@
+/* ---------- annex intro (page 17) ---------- */
+.figma-annex-intro {
+  background: #ffffff;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Background floating radial gradient with matrix flip */
+.figma-annex-intro__bg-wrap {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  transform: matrix(1, 0, 0, -1, 0, 0); /* Keep Y-axis flip */
+  z-index: 1;
+  pointer-events: none;
+}
+
+.figma-annex-intro__bg {
+  position: absolute;
+  /* Slightly oversized to allow smooth floating translation without gaps */
+  width: 130%;
+  height: 130%;
+  top: -15%;
+  left: -15%;
+  background: radial-gradient(82.19% 129.83% at 0% 0%, rgba(255, 255, 255, 0.47) 0%, rgba(47, 121, 255, 0.47) 45.98%, rgba(182, 194, 255, 0.47) 100%), #FFFFFF;
+  animation: float-annex-bg 22s ease-in-out infinite alternate;
+}
+
+/* Subtle, natural swaying and floating animation for the background */
+@keyframes float-annex-bg {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  50% {
+    transform: translate(3%, -2%) scale(1.05) rotate(1.5deg);
+  }
+  100% {
+    transform: translate(-2%, 2%) scale(0.98) rotate(-1deg);
+  }
+}
+
+.figma-annex-intro__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  gap: 36px; /* Reduced gap from 51px to 36px to bring summary and headline closer and move content up */
+
+  position: absolute;
+  width: 361px;
+  height: auto; /* Allow height to adapt to reduced gap */
+  left: calc(50% - 361px/2 + 0.5px);
+  top: 275px; /* Fine-tuned downward from 240px to 275px to avoid being too high */
+  z-index: 2;
+  text-align: center;
+}
+
+/* White Capsule Style for 부록 (Fully matching shared .figma-pill design but customized with transparent blue center gradient) */
+.figma-annex-intro .figma-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 14px;
+  border-radius: 999px;
+  font-family: 'Pretendard', var(--sans);
+  font-size: clamp(13px, 1vw, 15px);
+  font-weight: 500;
+  color: #000000;
+  position: relative;
+  /* Soft white-to-blue gradient at the center blending out */
+  background: radial-gradient(70% 70% at 50% 50%, rgba(214, 226, 255, 0.45) 0%, rgba(255, 255, 255, 0.9) 100%);
+  box-shadow:
+    inset 0 -2px 17px rgba(255, 255, 255, 1),
+    inset 0 8px 16px rgba(255, 255, 255, 0.5),
+    0px 4px 10px rgba(0, 44, 95, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  transition: opacity 0.9s ease, transform 1.05s cubic-bezier(.22,1,.36,1), filter 0.8s ease;
+  transition-delay: var(--rd, 0ms);
+}
+
+.figma-annex-intro .figma-pill::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  /* Extra layer of soft light to blend naturally */
+  background: linear-gradient(178deg, rgba(255, 255, 255, 0.25) 3%, rgba(240, 245, 255, 0.15) 92%);
+  z-index: -1;
+}
+
+/* Big bold modern APPENDIX title with reduced font weight */
+.figma-annex-intro__headline {
+  margin: 0;
+  font-family: 'Helvetica Neue', 'Arial', var(--sans);
+  font-size: clamp(40px, 5.5vw, 64px);
+  font-weight: 500; /* Reduced from 700 to 500 (lighter state) */
+  line-height: 1.1;
+  letter-spacing: 0.04em;
+  color: #002C5F;
+  text-transform: uppercase;
+  transition: opacity 0.9s ease, transform 1.05s cubic-bezier(.22,1,.36,1), filter 0.8s ease;
+  transition-delay: var(--rd, 0ms);
+}
+
+/* Elegant subtitle with larger black text and adjusted spacing */
+.figma-annex-intro__summary {
+  margin: -10px 0 0; /* Move slightly up to reduce space between APPENDIX and summary */
+  font-family: 'Pretendard', var(--sans);
+  font-size: clamp(16px, 1.3vw, 19px); /* Increased size */
+  font-weight: 500; /* Solid font weight */
+  color: #000000; /* True black as requested */
+  letter-spacing: -0.015em;
+  line-height: 1.4;
+  transition: opacity 0.9s ease, transform 1.05s cubic-bezier(.22,1,.36,1), filter 0.8s ease;
+  transition-delay: var(--rd, 0ms);
+}
+
+/* ---------- responsive (mobile/tablet) ---------- */
+@media (max-width: 900px) {
+  .figma-annex-intro__content {
+    width: 90%;
+    left: 5%;
+    top: 25%;
+    gap: 30px;
+    height: auto;
+  }
+}

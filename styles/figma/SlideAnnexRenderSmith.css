@@ -1,0 +1,519 @@
+/* ---------- annex rendersmith (page 22) ---------- */
+.figma-annex-rendersmith {
+  background: radial-gradient(82.19% 129.83% at 0% 0%, rgba(255, 255, 255, 0.47) 0%, rgba(47, 121, 255, 0.47) 45.98%, rgba(182, 194, 255, 0.47) 100%), #FFFFFF;
+  transform: matrix(1, 0, 0, -1, 0, 0);
+  position: relative;
+  overflow: hidden;
+}
+
+/* We create a non-flipped container inside to make sure the content displays correctly,
+   matching the exact setup used in other annex pages like SlideAnnexConductor */
+.figma-annex-rendersmith__content {
+  align-items: flex-start;
+  text-align: left;
+  transform: matrix(1, 0, 0, -1, 0, 0); /* Unflip the content so text is not upside-down */
+}
+
+/* Desktop Sizing (matching Frame 205 coordinates) */
+@media (min-width: 1201px) {
+  .figma-annex-rendersmith .figma-slide__inner {
+    width: 100% !important;
+    max-width: 1920px !important;
+    height: 100vh;
+    position: relative;
+    padding: 0 !important;
+  }
+
+  .figma-annex-rendersmith__wrapper {
+    position: absolute;
+    width: 1115.78px; /* 0.8x scaled from 1394.72px */
+    height: 514.67px; /* 0.8x scaled from 643.34px */
+    left: calc(50% - 1115.78px / 2); /* Perfectly centered horizontally */
+    top: 155px; /* Shifted up from 215.36px to give more space and look extremely well balanced */
+  }
+
+  .figma-annex-rendersmith__main-frame {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 17.83px; /* 0.8x scaled from 22.29px */
+    width: 1115.78px;
+    height: 514.67px;
+  }
+
+  /* Frame 51 */
+  .figma-annex-rendersmith__header-frame {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 11.14px; /* 0.8x scaled from 13.93px */
+    width: 968.64px; /* 0.8x scaled from 1210.8px */
+    height: 159.10px; /* 0.8x scaled from 198.87px */
+  }
+
+  .figma-annex-rendersmith__badge {
+    width: 968.64px;
+    height: 21.6px;
+    font-family: 'Pretendard', var(--sans);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13.5px; /* Scaled from 15.4px */
+    line-height: 22px;
+    background: linear-gradient(90deg, #335F95 0%, #4973AB 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .figma-annex-rendersmith__title {
+    width: 968.64px;
+    height: 57.6px;
+    font-family: 'Pretendard', var(--sans);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 45.86px; /* 0.8x scaled from 57.32px */
+    line-height: 125%;
+    letter-spacing: -0.02em;
+    color: #002C5F;
+    margin: 0;
+  }
+
+  .figma-annex-rendersmith__subtitle {
+    width: 968.64px;
+    height: 57.6px;
+    font-family: 'Pretendard', var(--sans);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 19.14px; /* 0.8x scaled from 23.92px */
+    line-height: 28.8px;
+    color: #000000;
+    margin: 0;
+  }
+
+  /* Frame 202 */
+  .figma-annex-rendersmith__cards-and-thread {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 22.30px; /* 0.8x scaled from 27.87px */
+    width: 1115.78px;
+    height: 313.22px; /* 0.8x scaled from 391.52px */
+    position: relative;
+  }
+
+  /* Group 50 */
+  .figma-annex-rendersmith__grid-group {
+    width: 1115.77px;
+    height: 170.54px; /* 0.8x scaled from 213.18px */
+    position: relative;
+  }
+
+  /* Cards Absolute Sizing */
+  .figma-annex-rendersmith__card {
+    position: absolute;
+    width: 267.52px; /* 0.8x scaled from 334.4px */
+    height: 170.54px; /* 0.8x scaled from 213.18px */
+    top: 0px;
+    box-sizing: border-box;
+  }
+
+  .figma-annex-rendersmith__card--1 { left: 0px; }
+  .figma-annex-rendersmith__card--2 { left: 283.11px; /* 0.8x scaled from 353.89px */ }
+  .figma-annex-rendersmith__card--3 { left: 565.11px; /* 0.8x scaled from 706.39px */ }
+  .figma-annex-rendersmith__card--4 { left: 848.25px; /* 0.8x scaled from 1060.31px */ }
+
+  .figma-annex-rendersmith__card-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(169.38deg, rgba(167, 186, 220, 0.4) 2.63%, #FDFCFB 92.11%);
+    box-shadow: inset 0px 4.78px 10.53px #FFFFFF;
+    border-radius: 27.87px; /* 0.8x scaled from 34.83px */
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    z-index: 1;
+  }
+
+  .figma-annex-rendersmith__card-inner {
+    position: absolute;
+    left: 28.98px; /* 0.8x scaled from 36.22px */
+    top: 24.52px; /* 0.8x scaled from 30.65px */
+    width: calc(100% - 58px);
+    height: 118.97px; /* 0.8x scaled from 148.71px */
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .figma-annex-rendersmith__card-en {
+    height: 24px;
+    font-family: 'Pretendard', var(--sans);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14.11px; /* 0.8x scaled from 17.639px */
+    line-height: 23px;
+    color: #05438A;
+    text-transform: uppercase;
+  }
+
+  .figma-annex-rendersmith__card-title {
+    height: 24px;
+    font-family: 'Pretendard', var(--sans);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16.72px; /* 0.8x scaled from 20.899px */
+    line-height: 23px;
+    color: #000000;
+    margin: 4.98px 0 0 0;
+  }
+
+  .figma-annex-rendersmith__card-desc {
+    height: 37.6px;
+    font-family: 'Pretendard', var(--sans);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13.20px; /* 0.8x scaled from 16.499px */
+    line-height: 18.4px;
+    color: #000000;
+    margin: 28.39px 0 0 0;
+  }
+
+  /* Group 53 - Thread */
+  .figma-annex-rendersmith__thread-group {
+    position: absolute;
+    width: 1115.78px;
+    height: 120.38px; /* 0.8x scaled from 150.48px */
+    left: 0px;
+    top: 192.84px; /* 0.8x scaled from 241.05px */
+  }
+
+  .figma-annex-rendersmith__thread-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.72) 100%);
+    border-radius: 20.38px; /* 0.8x scaled from 25.47px */
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-sizing: border-box;
+    z-index: 1;
+  }
+
+  /* Line 16 */
+  .figma-annex-rendersmith__thread-line {
+    position: absolute;
+    width: 986.47px; /* 0.8x scaled from 1233.09px */
+    height: 0px;
+    left: 63.53px; /* 0.8x scaled from 79.41px */
+    top: 25.62px; /* 0.8x scaled from 32.03px */
+    border: none;
+    border-top: 2.229px solid #286DBE; /* 0.8x scaled from 2.786px */
+    z-index: 2;
+  }
+
+  /* Ellipse 25 */
+  .figma-annex-rendersmith__thread-dot {
+    position: absolute;
+    width: 10.03px; /* 0.8x scaled from 12.54px */
+    height: 10.03px;
+    left: 34.55px; /* 0.8x scaled from 43.19px */
+    top: 20.06px; /* 0.8x scaled from 25.07px */
+    background: #286DBE;
+    border-radius: 50%;
+    z-index: 2;
+  }
+
+  /* Frame 119 */
+  .figma-annex-rendersmith__thread-text-frame {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 6.69px; /* 0.8x scaled from 8.36px */
+    position: absolute;
+    width: 1003.19px; /* 0.8x scaled from 1253.99px */
+    height: 52.29px; /* 0.8x scaled from 65.36px */
+    left: 34.55px; /* 0.8x scaled from 43.19px */
+    top: 47.93px; /* 0.8x scaled from 59.91px */
+    z-index: 2;
+  }
+
+  .figma-annex-rendersmith__thread-subtitle {
+    width: 1003.19px;
+    height: 24px;
+    font-family: 'Pretendard', var(--sans);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20.06px; /* 0.8x scaled from 25.079px */
+    line-height: 24px;
+    color: #033875;
+    margin: 0;
+  }
+
+  .figma-annex-rendersmith__thread-desc {
+    width: 1003.19px;
+    height: 21.6px;
+    font-family: 'Pretendard', var(--sans);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12.23px; /* 0.8x scaled from 15.289px */
+    line-height: 21px;
+    color: #000000;
+    margin: 0;
+  }
+
+  /* Frame 204 - Footer Frame (display: none by default on desktop) */
+  .figma-annex-rendersmith__footer-frame {
+    display: none;
+    width: 788.36px;
+    height: 169.09px;
+  }
+}
+
+/* ---------- responsive (mobile/tablet) ---------- */
+@media (max-width: 1200px) {
+  .figma-annex-rendersmith .figma-slide__inner {
+    padding: 40px 24px;
+    height: auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .figma-annex-rendersmith__wrapper {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .figma-annex-rendersmith__main-frame {
+    width: 100% !important;
+    height: auto !important;
+    gap: 30px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .figma-annex-rendersmith__header-frame {
+    width: 100% !important;
+    height: auto !important;
+    gap: 12px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .figma-annex-rendersmith__badge {
+    width: auto !important;
+    height: auto !important;
+    font-size: 14px !important;
+    font-family: 'Pretendard', var(--sans);
+    font-weight: 500;
+    background: linear-gradient(90deg, #335F95 0%, #4973AB 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .figma-annex-rendersmith__title {
+    width: 100% !important;
+    height: auto !important;
+    font-size: 32px !important;
+    line-height: 1.3 !important;
+    color: #002C5F;
+    margin: 0;
+  }
+
+  .figma-annex-rendersmith__subtitle {
+    width: 100% !important;
+    height: auto !important;
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+    color: #000000;
+    margin: 0;
+  }
+
+  .figma-annex-rendersmith__cards-and-thread {
+    width: 100% !important;
+    height: auto !important;
+    gap: 24px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .figma-annex-rendersmith__grid-group {
+    width: 100% !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    position: relative !important;
+  }
+
+  .figma-annex-rendersmith__card {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: unset !important;
+    box-sizing: border-box;
+  }
+
+  .figma-annex-rendersmith__card-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(169.38deg, rgba(167, 186, 220, 0.5) 2.63%, #FDFCFB 92.11%);
+    box-shadow: inset 0px 5.98097px 13.1581px #FFFFFF;
+    border-radius: 20px !important;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    z-index: 1;
+  }
+
+  .figma-annex-rendersmith__card-inner {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    padding: 24px !important;
+    box-sizing: border-box;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .figma-annex-rendersmith__card-en {
+    height: auto !important;
+    font-size: 13px !important;
+    color: #05438A;
+    text-transform: uppercase;
+  }
+
+  .figma-annex-rendersmith__card-title {
+    height: auto !important;
+    font-size: 18px !important;
+    margin: 8px 0 !important;
+    color: #000000;
+  }
+
+  .figma-annex-rendersmith__card-desc {
+    height: auto !important;
+    font-size: 14px !important;
+    margin: 8px 0 0 0 !important;
+    color: #000000;
+  }
+
+  .figma-annex-rendersmith__thread-group {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    padding: 24px !important;
+    box-sizing: border-box;
+    display: block;
+  }
+
+  .figma-annex-rendersmith__thread-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.72) 100%);
+    border-radius: 20px !important;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    z-index: 1;
+  }
+
+  .figma-annex-rendersmith__thread-line,
+  .figma-annex-rendersmith__thread-dot {
+    display: none !important;
+  }
+
+  .figma-annex-rendersmith__thread-text-frame {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    gap: 8px !important;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .figma-annex-rendersmith__thread-subtitle {
+    width: 100% !important;
+    height: auto !important;
+    font-size: 18px !important;
+    color: #033875;
+    margin: 0;
+  }
+
+  .figma-annex-rendersmith__thread-desc {
+    width: 100% !important;
+    height: auto !important;
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+    color: #000000;
+    margin: 0;
+  }
+
+  .figma-annex-rendersmith__footer-frame {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .figma-annex-rendersmith__tags-row {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+  }
+
+  .figma-annex-rendersmith__tag {
+    padding: 6px 12px !important;
+    font-size: 13px !important;
+    background: rgba(255, 255, 255, 0.6) !important;
+    border: 1px solid #fff !important;
+    border-radius: 8px !important;
+    color: #57597e !important;
+    font-weight: 500;
+  }
+
+  .figma-annex-rendersmith__footnote-panel {
+    display: flex !important;
+    gap: 15px !important;
+    padding-left: 15px !important;
+    border-left: 3px solid #286DBE !important;
+  }
+
+  .figma-annex-rendersmith__footnote-accent {
+    display: none !important;
+  }
+
+  .figma-annex-rendersmith__footnote-label {
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    color: #033875 !important;
+    display: block !important;
+    margin-bottom: 8px !important;
+  }
+
+  .figma-annex-rendersmith__footnote-desc {
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+    color: #000 !important;
+    margin: 0;
+  }
+}

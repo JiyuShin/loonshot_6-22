@@ -1,0 +1,96 @@
+/* ---------- inflection (page 5 · Frame 535) ---------- */
+.figma-inflection {
+  position: relative;
+  background:
+    radial-gradient(
+      109.45% 109.45% at 50% -9.49%,
+      rgba(157, 191, 255, 0.5) 7.21%,
+      rgba(189, 212, 255, 0.5) 17.31%,
+      rgba(255, 255, 255, 0.5) 100%
+    ),
+    #edf3ff;
+}
+
+/* 4-5페이지 심리스 브릿지 (상단) */
+.figma-inflection::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 25vh;
+  background: linear-gradient(
+    to bottom,
+    #edf3ff 0%,
+    rgba(237, 243, 255, 0.7) 50%,
+    transparent 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+.figma-inflection .figma-slide__inner {
+  width: min(100%, 1440px); /* SVG 가로 길이 1439px에 최적화하여 1440px로 조정 */
+  padding-left: clamp(24px, 4vw, 80px);
+  padding-right: clamp(24px, 4vw, 80px);
+}
+
+.figma-inflection__content {
+  align-items: center;
+  text-align: center;
+}
+
+.figma-inflection__tag {
+  display: block;
+  width: 105px;
+  height: 41px;
+  flex: none;
+}
+
+.figma-inflection__hero-text {
+  display: block;
+  width: min(100%, 51em);
+  height: auto;
+  aspect-ratio: 1153 / 133;
+  margin: clamp(20px, 3vh, 36px) auto -4px;
+  overflow: visible;
+}
+
+.figma-inflection__hero-subtitle {
+  transform: translateY(-4px);
+}
+
+.figma-inflection__sub-summary {
+  margin: 7px auto 0;
+  max-width: 48em;
+  text-align: center;
+}
+
+.figma-inflection__sub-desc {
+  margin: 12px 0 0;
+  font-size: clamp(13.5px, 1.1vw, 16px);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--figma-ink);
+  letter-spacing: -0.02em;
+}
+
+.figma-inflection__cards {
+  display: block;
+  width: min(100%, calc(271px * 5 + 21px * 4));
+  height: auto;
+  aspect-ratio: 1689 / 199;
+  margin: clamp(44px, 6vh, 60px) auto 0;
+  overflow: visible;
+}
+
+.figma-inflection__bottom-card {
+  display: block;
+  width: 100%;
+  max-width: 680px;
+  height: auto;
+  aspect-ratio: 863 / 171;
+  margin: clamp(40px, 5.5vh, 56px) auto 0;
+  overflow: visible;
+}
+

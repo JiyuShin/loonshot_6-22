@@ -1,0 +1,519 @@
+/* ---------- page 10 · loop ---------- */
+.figma-loop {
+  background:
+    radial-gradient(142.21% 361.16% at -42.2% -7.46%, rgba(255, 255, 255, 0.23) 0%, rgba(47, 121, 255, 0.23) 45.98%, rgba(182, 194, 255, 0.23) 100%),
+    linear-gradient(0deg, #FFFFFF, #FFFFFF),
+    #FFFFFF !important;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.figma-loop__bg {
+  position: absolute;
+  inset: 0;
+  display: none;
+  pointer-events: none;
+  overflow: hidden;
+  background: linear-gradient(135deg, #cbdcff 0%, #eef4ff 50%, #d5e3ff 100%);
+}
+
+.figma-loop__glow--a {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(80% 70% at 50% 15%, rgba(255, 255, 255, 0.95) 0%, rgba(200, 220, 255, 0.5) 40%, transparent 80%);
+  opacity: 0.95;
+}
+
+.figma-loop__glow--b {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(60% 50% at 90% 40%, rgba(77, 109, 255, 0.35), transparent 75%),
+              radial-gradient(50% 50% at 10% 60%, rgba(77, 109, 255, 0.3), transparent 70%);
+  filter: blur(30px);
+  opacity: 0.8;
+}
+
+.figma-loop__glow--c {
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  left: 15%;
+  top: 10%;
+  background: radial-gradient(circle, rgba(136, 178, 239, 0.45) 0%, transparent 75%);
+  filter: blur(50px);
+  opacity: 0.85;
+}
+
+/* 9-10페이지 심리스 브릿지 (상단) */
+.figma-loop::before {
+  content: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 18vh;
+  background: linear-gradient(to bottom, 
+    #dbe6ff 0%, 
+    rgba(219, 230, 255, 0.8) 20%, 
+    transparent 100%
+  );
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 10;
+  pointer-events: none;
+  transition: all 0.8s ease;
+  opacity: 1;
+}
+
+.figma-loop.on::before {
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  opacity: 0;
+}
+
+.figma-loop__content {
+  width: min(100%, 1173px);
+  align-items: stretch;
+  justify-content: center;
+}
+
+.figma-loop__content--title-only {
+  align-items: center;
+  justify-content: flex-start;
+  width: min(100%, calc(100vw - clamp(48px, 10vw, 128px)));
+  max-width: 1760px;
+  --loop-diagram-width: min(1695px, 98%);
+  --loop-scale-width: calc(var(--loop-diagram-width) * 1673 / 1753);
+  padding-top: clamp(40px, 6vh, 70px);
+  text-align: center;
+}
+
+.figma-loop__eyebrow {
+  display: flex;
+  flex: none;
+  align-items: flex-start;
+  justify-content: center;
+  width: 82px;
+  height: 26px;
+  padding: 6px 14px;
+  margin: 0 0 40px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.62);
+  box-shadow:
+    0 2px 8px rgba(20, 35, 60, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65);
+  color: #15233F;
+  font-family: Pretendard, var(--sans);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 14px;
+  letter-spacing: 0.56px;
+  text-align: center;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+.figma-loop__title-stack {
+  transform: translateY(-24px);
+}
+
+.figma-loop__title-only-headline {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2em;
+  font-size: clamp(26px, 3.6vw, 48px);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #000;
+}
+
+.figma-loop__title-only-subtitle {
+  width: min(660px, 64vw);
+  margin: clamp(10px, 1.5vh, 18px) auto 0;
+  font-family: var(--sans);
+  font-size: clamp(16px, 1.45vw, 21px);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  color: #15233F;
+  text-align: center;
+}
+
+.figma-loop__subtitle-scale {
+  width: var(--loop-scale-width);
+  min-width: 0;
+  max-width: 100%;
+  aspect-ratio: 1673 / 47;
+  margin-top: 29px;
+  line-height: 0;
+}
+
+.figma-loop__subtitle-scale svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+
+.figma-loop__flow-diagram {
+  width: var(--loop-diagram-width);
+  min-width: 0;
+  max-width: 100%;
+  aspect-ratio: 1753 / 583;
+  margin-top: calc(clamp(16px, 2.5vh, 32px) + 25px);
+  line-height: 0;
+}
+
+.figma-loop__flow-diagram svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+
+/* ---------- loop · entrance motion ---------- */
+.figma-loop__scale-reveal {
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 1300ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--loop-rd, 900ms);
+}
+
+.figma-loop.on .figma-loop__scale-reveal {
+  clip-path: inset(0 0 0 0);
+}
+
+.figma-loop__subtitle-scale .figma-loop__scale-label {
+  opacity: 0;
+  transition: opacity 650ms ease;
+}
+
+.figma-loop__subtitle-scale .figma-loop__scale-label--1 {
+  transition-delay: calc(var(--loop-rd, 900ms) + 180ms);
+}
+
+.figma-loop__subtitle-scale .figma-loop__scale-label--2 {
+  transition-delay: calc(var(--loop-rd, 900ms) + 620ms);
+}
+
+.figma-loop__subtitle-scale .figma-loop__scale-label--3 {
+  transition-delay: calc(var(--loop-rd, 900ms) + 1060ms);
+}
+
+.figma-loop.on .figma-loop__scale-label {
+  opacity: 1;
+}
+
+.figma-loop__flow-part {
+  opacity: 0;
+  filter: blur(6px);
+  transition:
+    opacity 780ms ease,
+    filter 920ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--loop-part-rd, 0ms);
+}
+
+.figma-loop.on .figma-loop__flow-part {
+  opacity: 1;
+  filter: blur(0);
+}
+
+.figma-loop__flow-part--bg {
+  transition-duration: 1100ms, 1300ms;
+}
+
+.figma-loop__flow-part--pillar {
+  transition-duration: 950ms, 1100ms;
+}
+
+.figma-loop__grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr; /* 다이어그램의 크기 비중을 대폭 늘리고 우측 텍스트 영역을 상대적으로 컴팩트하게 조절 */
+  gap: clamp(40px, 5vw, 90px); /* 갭을 줄여서 우측 텍스트가 더 왼쪽으로 당겨지도록 유도 */
+  align-items: center;
+  width: 100%;
+}
+
+.figma-loop__stage {
+  position: relative;
+  width: min(100%, 680px); /* 크기를 620px에서 680px로 한층 더 키움 */
+  aspect-ratio: 1;
+  margin: 0 0 0 -130px; /* 다이어그램을 왼쪽으로 더욱 과감하게 밀어냄 (-80px -> -130px) */
+}
+
+.figma-loop__ring {
+  position: absolute;
+  inset: 12%;
+  width: 76%;
+  height: 76%;
+  object-fit: contain;
+  opacity: 0.8;
+}
+
+.figma-loop__ring-wrap {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.figma-loop__ring-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  animation: loop-rotate 4s linear infinite; /* 10s에서 4s로 속도 대폭 향상 */
+}
+
+@keyframes loop-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.figma-loop__center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(28px, 3.5vw, 42px);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--figma-navy);
+  text-align: center;
+  z-index: 1;
+}
+
+.figma-loop__center strong {
+  font-weight: 600;
+  color: #000;
+}
+
+.figma-loop__node-wrap {
+  position: absolute;
+  width: 36%;
+  aspect-ratio: 1;
+  z-index: 2;
+}
+
+.figma-loop__node-wrap--top {
+  top: -5%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.figma-loop__node-wrap--right {
+  right: -5%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.figma-loop__node-wrap--bottom {
+  bottom: -5%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.figma-loop__node-wrap--left {
+  left: -5%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.figma-loop__node {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.figma-loop__node-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 24px rgba(21, 29, 91, 0.08));
+  animation: loop-gradient-spin 18s linear infinite; /* 6s에서 18s로 늘려 아주 천천히 은은하게 회전하도록 조절 */
+}
+
+@keyframes loop-gradient-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.figma-loop__node-text {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  padding: 10%;
+}
+
+.figma-loop__node-en {
+  font-size: clamp(10px, 0.8vw, 12px);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(21, 29, 91, 0.4);
+  margin-bottom: 2px;
+}
+
+.figma-loop__node-ko {
+  font-size: clamp(18px, 1.6vw, 22px);
+  font-weight: 600;
+  color: var(--figma-ink);
+  margin-bottom: 2px;
+}
+
+.figma-loop__node-sub {
+  font-size: clamp(12px, 1vw, 14px);
+  color: rgba(21, 29, 91, 0.5);
+  font-weight: 400;
+}
+
+.figma-loop__copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: clamp(20px, 2.8vh, 32px);
+  text-align: left;
+  padding-left: 0;
+  margin-left: -50px; /* 우측 콘텐츠 전체를 왼쪽으로 50px 더 당겨줌 */
+  width: calc(100% + 50px); /* 당겨진 마진만큼 가로폭을 확장하여 줄바꿈(Word-wrap) 방지 */
+}
+
+.figma-loop__copy .figma-loop__eyebrow {
+  margin: 0;
+  font-size: clamp(12px, 1vw, 14px);
+  font-weight: 500; /* 600에서 500으로 굵기 완화 */
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #4d6dff; /* 그라디언트 대신 단색 블루로 깔끔하게 처리 */
+}
+
+.figma-loop__headline {
+  margin: 0;
+  font-size: clamp(38px, 4.5vw, 54px); /* 크기를 키워 시원한 비주얼 확보 */
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--figma-navy);
+}
+
+.figma-loop__quote {
+  border-left: 3px solid #4d6dff;
+  padding: 6px 0 6px 24px; /* 패딩을 시원하게 늘려 텍스트 가로폭 확보 */
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.figma-loop__quote-lead {
+  margin: 0;
+  font-size: clamp(22px, 2.4vw, 28px); /* 크기를 키워 시각적 강조 극대화 */
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  color: var(--figma-navy);
+  white-space: nowrap; /* 줄바꿈 방지 설정 */
+}
+
+.figma-loop__quote-body {
+  margin: 0;
+  font-size: clamp(15px, 1.2vw, 17px); /* 가독성을 위해 크기 미세 증가 */
+  line-height: 1.65;
+  color: #4a5270;
+  font-weight: 400;
+}
+
+.figma-loop__quote-body strong {
+  font-weight: 500; /* 600에서 500으로 굵기 완화 */
+  color: var(--figma-navy);
+}
+
+.figma-loop__body {
+  margin: 0;
+  font-size: clamp(14px, 1.1vw, 16px); /* 크기 복원 */
+  line-height: 1.75;
+  color: rgba(21, 29, 91, 0.6);
+  font-weight: 400;
+}
+
+.figma-loop__asset {
+  margin: 16px 0 0;
+  padding: 14px 24px; /* 패딩을 넓혀 정갈하고 시원하게 배치 */
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.9) 100%);
+  font-size: clamp(14px, 1.1vw, 16px); /* 크기 복원 */
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--figma-navy);
+  box-shadow: 0 4px 12px rgba(61, 62, 68, 0.03);
+  width: 100%;
+}
+
+.figma-loop__underline {
+  position: relative;
+  display: inline-block;
+}
+
+.figma-loop__underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0.05em;
+  width: 0;
+  height: 0.15em;
+  background: rgba(77, 109, 255, 0.4);
+  transition: width 1s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: 1.2s; /* 900ms reveal + 300ms delay */
+  z-index: -1;
+}
+
+.slide.on .figma-loop__underline::after {
+  width: 100%;
+}
+
+/* 10-11페이지 심리스 브릿지 (하단) */
+.figma-loop::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 15vh;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(238, 243, 255, 0.7) 50%,
+    #eef3ff 100%
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+

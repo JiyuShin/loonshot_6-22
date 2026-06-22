@@ -1,0 +1,332 @@
+/* ---------- annex history (page 19) ---------- */
+.figma-annex-history {
+  background: #fff;
+  position: relative;
+}
+
+/* 2-3페이지 심리스 브릿지 (상단) - 포드 슬라이드 하단 그라데이션과 맞물려 부드러운 화이트 전환 연출 */
+.figma-annex-history::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 20vh; /* 넉넉한 높이로 더 부드러운 그라데이션 연출 */
+  background: linear-gradient(to bottom, 
+    #ffffff 0%,
+    rgba(255, 255, 255, 0.9) 30%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  z-index: 2;
+  pointer-events: none;
+  opacity: calc(1 - var(--scroll-progress-ford, 0));
+  transition: opacity 0.2s ease-out;
+}
+
+.figma-annex-history__bg {
+  position: absolute;
+  inset: 2px 0 0;
+  overflow: hidden;
+  transform: matrix(1, 0, 0, -1, 0, 0);
+  background:
+    radial-gradient(
+      82.19% 129.83% at 0% 0%,
+      rgba(255, 255, 255, 0.47) 0%,
+      rgba(47, 121, 255, 0.47) 45.98%,
+      rgba(182, 194, 255, 0.47) 100%
+    ),
+    #fff;
+}
+
+.figma-annex-history__bg::before,
+.figma-annex-history__bg::after {
+  content: "";
+  position: absolute;
+  width: min(62vw, 760px);
+  height: min(78vh, 620px);
+  border-radius: 50%;
+  filter: blur(34px);
+  will-change: transform;
+}
+
+.figma-annex-history__bg::before {
+  left: -26vw;
+  top: 12vh;
+  background: radial-gradient(circle, rgba(77, 109, 255, 0.58) 0%, rgba(161, 227, 255, 0.14) 58%, rgba(161, 227, 255, 0) 100%);
+}
+
+.figma-annex-history__bg::after {
+  right: -24vw;
+  top: 10vh;
+  background: radial-gradient(circle, rgba(77, 109, 255, 0.58) 0%, rgba(161, 227, 255, 0.14) 58%, rgba(161, 227, 255, 0) 100%);
+}
+
+.figma-annex-history__content {
+  transform: translateY(110px);
+}
+
+.figma-annex-history__tag {
+  display: block;
+  width: 228px;
+  height: 43px;
+  flex: none;
+}
+
+.figma-annex-history.on .figma-annex-history__bg::before {
+  animation: figmaAnnexHistoryLeftGlow 8s ease-in-out infinite alternate;
+}
+
+.figma-annex-history.on .figma-annex-history__bg::after {
+  animation: figmaAnnexHistoryRightGlow 9s ease-in-out infinite alternate;
+}
+
+@keyframes figmaAnnexHistoryLeftGlow {
+  0% {
+    transform: translate3d(-80px, -80px, 0);
+  }
+  50% {
+    transform: translate3d(220px, 96px, 0);
+  }
+  100% {
+    transform: translate3d(70px, -170px, 0);
+  }
+}
+
+@keyframes figmaAnnexHistoryRightGlow {
+  0% {
+    transform: translate3d(80px, 84px, 0);
+  }
+  50% {
+    transform: translate3d(-230px, -110px, 0);
+  }
+  100% {
+    transform: translate3d(-64px, 180px, 0);
+  }
+}
+
+.figma-annex-history__headline {
+  margin: calc(clamp(18px, 2.5vh, 28px) + 25px) 0 0;
+  font-size: clamp(30px, 4vw, 56px);
+  font-weight: 400;
+  color: #000;
+}
+
+.figma-annex-history__headline-accent {
+  font-weight: 600;
+  color: #0f2380;
+}
+
+.figma-annex-history__summary {
+  display: block;
+  width: 1077px;
+  max-width: 100%;
+  height: 23px;
+  flex: none;
+  align-self: stretch;
+  flex-grow: 0;
+  margin: clamp(14px, 2vh, 24px) 0 0;
+}
+
+.figma-annex-history__timeline {
+  position: relative;
+  width: min(100%, 900px);
+  height: 120px;
+  margin: clamp(60px, 8vh, 100px) auto 0;
+  transform: translateY(42px);
+  overflow: visible;
+}
+
+.figma-annex-history__line {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: transparent;
+  overflow: visible;
+}
+
+.figma-annex-history__line::before,
+.figma-annex-history__line::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 340px;
+  height: 1.5px;
+  background: #fff;
+  opacity: 0.48;
+}
+
+.figma-annex-history__line::before {
+  left: 57px;
+}
+
+.figma-annex-history__line::after {
+  left: 503px;
+}
+
+.figma-annex-history__line-inner {
+  display: none;
+}
+
+.figma-annex-history__milestone {
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  opacity: 0;
+  transform: translateX(-50%) translateY(8px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.figma-annex-history__milestone::before {
+  display: none;
+}
+
+.slide.on .figma-annex-history__line-inner {
+  width: 100%;
+}
+
+.slide.on .figma-annex-history__milestone {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.slide.on .figma-annex-history__milestone:nth-child(2) {
+  transition-delay: 0.3s;
+}
+
+.slide.on .figma-annex-history__milestone:nth-child(3) {
+  transition-delay: 0.5s;
+}
+
+.slide.on .figma-annex-history__milestone:nth-child(4) {
+  transition-delay: 0.7s;
+}
+
+.figma-annex-history__year {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--figma-ink);
+}
+
+.figma-annex-history__event {
+  position: absolute;
+  top: 37px;
+  width: 164px;
+  height: 72px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 14px 19px;
+  border-radius: 18.2222px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  color: #000;
+}
+
+.figma-annex-history__event strong {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.figma-annex-history__milestone:nth-child(2) .figma-annex-history__event strong,
+.figma-annex-history__milestone:nth-child(2) .figma-annex-history__event p,
+.figma-annex-history__milestone:nth-child(4) .figma-annex-history__event p {
+  line-height: 1.5;
+}
+
+.figma-annex-history__event.is-highlight {
+  font-weight: 400;
+}
+
+.figma-annex-history__event--ford,
+.figma-annex-history__event--porter,
+.figma-annex-history__event--highlight {
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  overflow: visible;
+}
+
+.figma-annex-history__event--ford .figma-annex-history__event-bg,
+.figma-annex-history__event--porter .figma-annex-history__event-bg,
+.figma-annex-history__event--highlight .figma-annex-history__event-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none;
+}
+
+.figma-annex-history__event--highlight .figma-annex-history__event-bg {
+  inset: auto;
+  width: calc(100% * 267 / 222);
+  height: calc(100% * 128 / 83);
+  left: calc(100% * -22.1992 / 222);
+  top: calc(100% * -12.2002 / 83);
+}
+
+.figma-annex-history__event--ford strong,
+.figma-annex-history__event--ford p,
+.figma-annex-history__event--porter strong,
+.figma-annex-history__event--porter p,
+.figma-annex-history__event--highlight p {
+  position: relative;
+  z-index: 1;
+}
+
+.figma-annex-history__stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  width: min(100%, 900px);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: clamp(80px, 12vh, 140px);
+}
+
+.figma-annex-history__stat-card {
+  padding: 24px;
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(214, 226, 255, 0.6) 100%);
+  border: 1px solid #fff;
+  text-align: left;
+}
+
+.figma-annex-history__stat-value {
+  font-size: 40px;
+  font-weight: 600;
+  color: var(--figma-navy);
+  margin-bottom: 12px;
+  background: linear-gradient(135deg, #0d0f1c 0%, #3d4582 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.figma-annex-history__stat-label {
+  font-size: 11px;
+  line-height: 1.5;
+  color: #000;
+}
+
+.figma-annex-history__stat-sub {
+  display: block;
+  opacity: 0.6;
+}
+

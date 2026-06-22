@@ -1,0 +1,179 @@
+/* ---------- cover ---------- */
+.figma-cover {
+  background: #eef3ff;
+  text-align: center;
+  position: relative;
+}
+
+.figma-cover__bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  /* 마스크를 제거하고 더 강력한 오버레이 블렌딩으로 변경 */
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+
+.figma-cover__bg .grainient-container {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.figma-cover__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  opacity: 0.22; /* 그라디언트에 은은하게 비치도록 불투명도 조절 */
+  mix-blend-mode: screen; /* 검은 배경을 걸러내고 하얀 별빛과 가스가 맑게 그라디언트와 섞이게 함 */
+  transition: opacity 1.5s ease-in-out; /* 은은하게 천천히 오르내리는 고급스러운 페이드 트랜지션 */
+}
+
+.figma-cover__video.is-hidden {
+  opacity: 0;
+}
+
+.figma-cover__galaxy {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: auto; /* 마우스 상호작용 허용 */
+  mix-blend-mode: screen; /* 검은색을 걸러내고 흰색 별빛만 밝게 합성 */
+  opacity: 0.65; /* 전체 별빛을 조금 더 은은하고 부드럽게 만들기 위해 불투명도 조절 */
+}
+
+/* 1-2페이지 심리스 브릿지 - 하단에만 아주 짧게 걸리도록 수정 */
+.figma-cover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 8vh;
+  background: linear-gradient(to bottom, 
+    transparent 0%, 
+    rgba(238, 243, 255, 0.4) 40%, 
+    #eef3ff 100%
+  );
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0; /* 시작할 때는 숨김 */
+  transition: opacity 0.8s ease;
+}
+
+.figma-cover.is-black::after {
+  opacity: 1; /* 스크롤 후에 나타남 */
+}
+
+.figma-cover .figma-slide__inner {
+  padding-top: clamp(140px, 16vh, 220px); /* 위쪽으로 올리기 위해 상단 패딩 수정 */
+}
+
+.figma-cover__content {
+  justify-content: flex-start; /* 중앙 정렬에서 상단 정렬로 변경 */
+  gap: clamp(48px, 6vh, 96px); /* 레데 텍스트와 타이틀 사이의 여백 확대 */
+  padding-top: 0; /* 중앙 정렬을 위해 기존 15vh 제거 */
+}
+
+.figma-cover.on .rv {
+  opacity: 1; /* 제목 등 일반 요소 100% */
+}
+
+.figma-cover.on .figma-cover__lede {
+  opacity: 1 !important; /* 상단 텍스트 100% */
+}
+
+.figma-cover.on.is-black .rv {
+  opacity: 1 !important; /* 스크롤 후 100% */
+}
+
+.figma-cover__lede {
+  margin: 0;
+  max-width: 36em;
+  font-size: clamp(18px, 2vw, 26px); /* 사이즈 대폭 확대 */
+  line-height: 1.45;
+  font-weight: 400; /* 너무 두껍지 않게 슬림한 레귤러 웨이트로 수정 */
+  color: var(--figma-navy); /* 초기 상태는 현대 다크 네이비 */
+  letter-spacing: -0.02em; /* 정교한 자간 조정 */
+  opacity: 1;
+  mix-blend-mode: normal; /* 초기 상태 normal */
+  transition: color 1s ease, opacity 1s ease, font-size 0.4s ease;
+}
+
+.figma-cover__title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  margin-top: 0;
+  opacity: 1;
+  mix-blend-mode: normal; /* 시작할 때 normal */
+  transition: mix-blend-mode 1s ease, opacity 1s ease;
+}
+
+.figma-cover.is-black .figma-cover__lede {
+  opacity: 0.6 !important; /* 스크롤 후 60% */
+  color: #fff !important;
+  mix-blend-mode: overlay !important;
+}
+
+/* 제목은 스크롤 시 원래의 블렌드 모드와 오퍼시티로 복구 */
+.figma-cover.is-black .figma-cover__title {
+  opacity: 1 !important;
+  mix-blend-mode: difference;
+}
+
+.figma-cover__title-project,
+.figma-cover__title-loonshot {
+  display: block;
+  background: linear-gradient(96.5deg, #ffffff 1.6%, #bfbfff 99.7%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: -0.02em;
+  line-height: 0.95;
+  mix-blend-mode: normal; /* 시작 시 normal */
+  text-shadow: 0 8px 40px rgba(255, 255, 255, 0.18);
+  transition: mix-blend-mode 0.4s ease;
+}
+
+.figma-cover.is-black .figma-cover__title-project,
+.figma-cover.is-black .figma-cover__title-loonshot {
+  mix-blend-mode: soft-light; /* 스크롤 후 복구 */
+}
+
+.figma-cover__title-project {
+  font-size: clamp(38px, 4.8vw, 68px); /* PROJECT 텍스트 대폭 확대 */
+  font-weight: 300; /* 피그마 시안처럼 극도로 얇고 우아하게 설정하되, 조금 더 두껍게 조정 */
+  margin-bottom: 0.08em;
+}
+
+.figma-cover__title-loonshot {
+  font-size: clamp(96px, 12vw, 196px); /* LOONSHOT 메인 타이틀 대폭 확대 */
+  font-weight: 300; /* 미니멀하며 세련되고 얇은 웨이트로 수정 */
+  letter-spacing: -0.03em; /* 얇은 서체에 최적화된 고급 음수 자간 */
+}
+
+.figma-cover__car {
+  width: min(100%, 998px);
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.figma-cover__car-img {
+  width: 100%;
+  height: auto;
+  max-height: min(42vh, 380px);
+  object-fit: contain;
+  object-position: center bottom;
+  filter: drop-shadow(0 24px 48px rgba(21, 29, 91, 0.18));
+}
+

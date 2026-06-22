@@ -1,0 +1,78 @@
+/* ---------- nadella (page 6) ---------- */
+.figma-nadella {
+  position: relative;
+  background: radial-gradient(109.45% 109.45% at 50% -9.49%, rgba(157, 191, 255, 0.5) 7.21%, rgba(189, 212, 255, 0.5) 17.31%, rgba(255, 255, 255, 0.5) 100%), #EDF3FF !important;
+}
+
+.figma-nadella .figma-silk__bg {
+  opacity: 0; /* Figma gradient background should be visible on page 8 */
+  transition: opacity 0.15s ease-out;
+}
+
+/* 6-7페이지 심리스 브릿지 (하단) */
+.figma-nadella::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%; /* 전체 높이를 커버하여 부드럽게 상승하도록 함 */
+  background: linear-gradient(to bottom, 
+    transparent 0%, 
+    rgba(247, 249, 255, 0.1) 30%, 
+    rgba(247, 249, 255, 0.6) 60%, 
+    rgba(247, 249, 255, 0.95) 85%, 
+    #f7f9ff 100%
+  );
+  backdrop-filter: blur(10px); /* 은은한 블러 효과로 WebGL 입자를 부드럽게 뭉개줌 */
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 10;
+  pointer-events: none;
+  transform: translateY(calc((1 - var(--scroll-progress, 0)) * 60%)); /* 진행도에 따라 아래에서 위로 상승 */
+  opacity: var(--scroll-progress, 0);
+  transition: transform 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.15s ease-out;
+}
+
+.figma-nadella__meta {
+  display: block;
+  width: min(100%, calc(clamp(14px, 1.25vw, 17px) * 1152 / 17));
+  height: auto;
+  aspect-ratio: 1152 / 26;
+  margin-top: 8px;
+  overflow: visible;
+}
+
+.figma-nadella .figma-nadella__diagram {
+  display: block;
+}
+
+.figma-nadella__content {
+  transform: translateY(-239px);
+}
+
+.figma-nadella__quote {
+  color: #000;
+  font-weight: 400;
+}
+
+.figma-nadella__quote-regular {
+  font-weight: 400;
+  color: #000;
+}
+
+.figma-nadella__quote-highlight {
+  color: #0F2380;
+  font-weight: 700;
+}
+
+.figma-nadella__author {
+  margin-bottom: 8px !important;
+  color: #000 !important;
+  letter-spacing: 0.04em;
+}
+
+.figma-nadella__meta-em {
+  font-weight: 600;
+  color: #000;
+}
+

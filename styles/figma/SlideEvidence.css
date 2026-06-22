@@ -1,0 +1,112 @@
+/* ---------- page 15 · evidence ---------- */
+.figma-evidence {
+  position: relative;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.figma-evidence__bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      34.82% 32.03% at 104.35% 34.16%,
+      rgba(255, 255, 255, 0.89) 5.36%,
+      rgba(240, 243, 255, 0) 100%
+    ),
+    radial-gradient(
+      26.64% 98.21% at 3.46% 78.76%,
+      rgba(255, 255, 255, 0.7) 0%,
+      rgba(229, 238, 255, 0) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(215, 225, 254, 0.85) 7.44%,
+      rgba(255, 255, 255, 0) 99.99%
+    ),
+    linear-gradient(
+      27.22deg,
+      rgba(218, 230, 255, 0.93) 21.9%,
+      rgba(255, 255, 255, 0) 35.13%
+    ),
+    linear-gradient(
+      257.08deg,
+      rgba(255, 255, 255, 0) -2.09%,
+      rgba(218, 223, 255, 0.8) 52.53%,
+      #f2f7ff 94.32%
+    ),
+    #ffffff;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.figma-evidence__content {
+  position: relative;
+  z-index: 1;
+  align-items: center;
+  gap: clamp(16px, 2.5vh, 28px);
+}
+
+.figma-evidence__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(6px, 1vh, 10px);
+  width: min(1088.54px, 100%);
+}
+
+.figma-evidence__headline {
+  margin: 0;
+  max-width: none;
+  white-space: nowrap;
+  font-size: clamp(22px, 3.6vw, 56px);
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: #01336e;
+}
+
+.figma-evidence__subtitle {
+  margin: -8px 0 0;
+  width: 100%;
+  font-family: Pretendard, var(--sans);
+  font-weight: 600;
+  font-size: 17.639px;
+  line-height: 29px;
+  text-align: center;
+  color: #24347d;
+}
+
+.figma-evidence__cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  width: 100%;
+}
+
+.figma-evidence__video-wrap {
+  width: min(1040px, 85vw, calc((100dvh - 360px) * 3024 / 1646));
+  aspect-ratio: 3024 / 1646;
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 
+    0 24px 48px rgba(1, 51, 110, 0.12),
+    0 8px 16px rgba(1, 51, 110, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  margin-top: clamp(12px, 2.5vh, 28px);
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.figma-evidence__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+

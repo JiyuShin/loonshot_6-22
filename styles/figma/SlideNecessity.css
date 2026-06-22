@@ -1,0 +1,137 @@
+/* ---------- necessity (page 6) ---------- */
+.figma-necessity {
+  background: radial-gradient(109.45% 109.45% at 50% -9.49%, rgba(157, 191, 255, 0.5) 7.21%, rgba(189, 212, 255, 0.5) 17.31%, rgba(255, 255, 255, 0.5) 100%), #EDF3FF;
+  position: relative;
+}
+
+.figma-necessity .figma-slide__inner {
+  width: min(100%, 1440px);
+  padding-left: clamp(24px, 4vw, 80px);
+  padding-right: clamp(24px, 4vw, 80px);
+}
+
+.figma-necessity__content {
+  align-items: center;
+  text-align: center;
+}
+
+.figma-necessity__headline {
+  margin: clamp(14px, 2vh, 26px) 0 0;
+  font-size: clamp(30px, 4vw, 56px); /* "118년, Value Chain..." 타이틀 크기와 완벽 통일 */
+  font-weight: 500; /* 다른 메인 슬라이드 타이틀 굵기와 통일 */
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+  color: #000000;
+  text-align: center;
+}
+
+.figma-necessity__headline-regular {
+  font-weight: 400;
+}
+
+.figma-necessity__headline-highlight {
+  color: #0F2380;
+  font-weight: 700;
+}
+
+.figma-necessity__sub-desc {
+  display: block;
+  width: min(100%, calc(clamp(17px, 1.5vw, 22px) * 767 / 28));
+  height: auto;
+  aspect-ratio: 767 / 33;
+  margin: clamp(8px, 1.2vh, 14px) auto 0;
+  overflow: visible;
+}
+
+.figma-necessity__cards {
+  width: 100%;
+  margin-top: clamp(36px, 5vh, 52px);
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 297px));
+  justify-content: center;
+  gap: 22px;
+}
+
+.figma-necessity__card-wrapper {
+  width: 100%;
+  max-width: 297px;
+  display: flex;
+}
+
+.figma-necessity__card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-family: var(--sans);
+  padding: 12px 17px;
+  gap: 5px; /* gap을 10px에서 5px로 줄여 컴팩트한 상하 여백 조절 */
+  width: 100%;
+  height: 266px;
+  background: linear-gradient(180deg, #F5F8FF 0%, #D4E2FF 100%);
+  border: 1.19146px solid rgba(255, 255, 255, 0.7);
+  border-radius: 17.872px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.figma-necessity__card * {
+  font-family: var(--sans);
+}
+
+.figma-necessity__card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(77, 109, 255, 0.08);
+}
+
+.figma-necessity__card-logo-box {
+  width: 100%;
+  height: 138px;
+  background: #FFFFFF;
+  border-radius: 17.872px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 2px; /* 기존 11px 마진을 2px로 획기적으로 줄여 여백 밀착 */
+  box-sizing: border-box;
+}
+
+.figma-necessity__card-logo {
+  object-fit: contain;
+}
+
+.figma-necessity__card-title {
+  font-family: var(--sans);
+  font-weight: 500; /* 600에서 500(Medium)으로 줄여 굵기를 더 얇고 날렵하게 조정 */
+  font-size: clamp(18.4px, calc(1.8vw - 1.6px), 24.4px);
+  line-height: 1.22;
+  letter-spacing: -0.02em;
+  color: #002C5F;
+  margin: 0; /* 기존 4px 마진을 0으로 만들어 gap으로만 여백을 통제 */
+  text-align: left;
+  transform: translateY(10px);
+}
+
+.figma-necessity__card-body {
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: clamp(13px, calc(1.28vw - 1.6px), 15.5px);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: rgba(0, 0, 0, 0.6);
+  margin: 0;
+  text-align: left;
+  word-break: keep-all;
+  transform: translateY(10px);
+}
+
+.figma-necessity__bottom-card {
+  display: block;
+  width: 100%;
+  max-width: 862px;
+  height: auto;
+  aspect-ratio: 862 / 170;
+  margin: clamp(30px, 4.5vh, 52px) auto 0;
+  overflow: visible;
+}
+

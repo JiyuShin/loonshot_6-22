@@ -1,0 +1,32 @@
+/* ============================================================
+   PROJECT LOONSHOT — Figma Slides Modular CSS Entrypoint
+   ============================================================ */
+
+@import "./figma/base.css";
+@import "./figma/SlideCover.css";
+@import "./figma/SlideOwnership.css";
+@import "./figma/SlideFord.css";
+@import "./figma/SlideChain.css";
+@import "./figma/SlideInflection.css";
+@import "./figma/SlideNecessity.css";
+@import "./figma/SlideNadella.css";
+@import "./figma/SlideCapital.css";
+@import "./figma/SlideRisk.css";
+@import "./figma/SlideJudgment.css";
+@import "./figma/SlideAnnexIntro.css";
+@import "./figma/SlideAnnexHistory.css";
+@import "./figma/SlideAnnexValueChainShift.css";
+@import "./figma/SlideAnnexConductor.css";
+@import "./figma/SlideAnnexDesignAIWorkflow.css";
+@import "./figma/SlideAnnexMilestone.css";
+@import "./figma/SlideAnnexCostCurve.css";
+@import "./figma/SlideAnnexRenderSmith.css";
+@import "./figma/SlideAnnexPayoff.css";
+@import "./figma/SlideLoop.css";
+@import "./figma/SlideClaim.css";
+@import "./figma/SlideRole.css";
+@import "./figma/SlideEvidence.css";
+@import "./figma/SlidePilot.css";
+@import "./figma/SlideAlphaGo.css";
+@import "./figma/SlideClosing.css";
+@import "./figma/SlideFrame255.css";

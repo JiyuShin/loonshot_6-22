@@ -1,0 +1,406 @@
+/* ---------- page 17 · frame 255 ---------- */
+.figma-frame255 {
+  position: relative;
+  overflow: hidden;
+  background: #e8f0ff; /* Richer, bluer base color */
+}
+
+.figma-frame255__bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      60% 60% at 50% 50%,
+      rgba(255, 255, 255, 0.95) 0%,
+      rgba(215, 230, 255, 0.85) 50%,
+      rgba(185, 210, 255, 0.6) 100%
+    ),
+    radial-gradient(
+      45% 45% at 15% 25%,
+      rgba(140, 180, 255, 0.75) 0%,
+      transparent 80%
+    ),
+    radial-gradient(
+      55% 55% at 85% 75%,
+      rgba(155, 190, 255, 0.7) 0%,
+      transparent 80%
+    ),
+    #e8f0ff;
+  pointer-events: none;
+  z-index: 0;
+  transition: background 0.8s ease;
+}
+
+/* Make background even richer blue when step 1 is active */
+.figma-frame255.is-step-1 .figma-frame255__bg {
+  background:
+    radial-gradient(
+      60% 60% at 50% 50%,
+      rgba(255, 255, 255, 0.9) 0%,
+      rgba(205, 225, 255, 0.9) 50%,
+      rgba(170, 200, 255, 0.7) 100%
+    ),
+    radial-gradient(
+      45% 45% at 15% 25%,
+      rgba(120, 165, 255, 0.8) 0%,
+      transparent 80%
+    ),
+    radial-gradient(
+      55% 55% at 85% 75%,
+      rgba(135, 175, 255, 0.75) 0%,
+      transparent 80%
+    ),
+    #dfebff;
+}
+
+.figma-frame255__content {
+  position: relative;
+  z-index: 1;
+  align-items: center;
+  justify-content: flex-start;
+  width: min(100%, 1340px);
+  max-width: 100%;
+  height: 100%;
+  padding: clamp(40px, 5.5vh, 72px) clamp(24px, 4vw, 64px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 2.8vh, 28px);
+}
+
+.figma-frame255__tag {
+  padding: 6.96px 19.5px;
+  border-radius: 389.42px;
+  background: linear-gradient(169.38deg, rgba(255, 255, 255, 0.1) 2.63%, rgba(253, 252, 251, 0.1) 92.11%);
+  box-shadow: inset 0px -2.99px 23.9px #FFFFFF, inset 0px 11.04px 22.08px rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.9s ease, transform 1.05s cubic-bezier(.22,1,.36,1), filter 0.8s ease;
+  transition-delay: var(--rd, 0ms);
+}
+
+.figma-frame255__tag-text {
+  font-family: 'Helvetica Neue', var(--sans);
+  font-weight: 500;
+  font-size: clamp(13px, 1.1vw, 15.5px);
+  line-height: 1.2;
+  text-align: center;
+  background: linear-gradient(90deg, #002C5F 0%, #000000 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Title Container to hold both titles overlapping */
+.figma-frame255__title-container {
+  position: relative;
+  width: 100%;
+  height: clamp(40px, 5.5vw, 70px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.figma-frame255__title {
+  position: absolute;
+  font-family: 'Pretendard', var(--sans);
+  font-weight: 500;
+  font-size: clamp(28px, 3.5vw, 52px);
+  line-height: 1.25;
+  text-align: center;
+  letter-spacing: -0.02em;
+  margin: 0;
+  transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  width: 100%;
+}
+
+.figma-frame255__title--original {
+  color: #000000;
+  opacity: 1;
+  filter: blur(0px);
+  transform: translateY(0) scale(1);
+}
+
+.figma-frame255.is-step-1 .figma-frame255__title--original {
+  opacity: 0;
+  filter: blur(15px);
+  transform: translateY(-12px) scale(0.97);
+  pointer-events: none;
+}
+
+.figma-frame255__title--new {
+  color: #002C5F; /* Stable solid deep navy */
+  opacity: 0;
+  filter: blur(15px);
+  transform: translateY(12px) scale(0.97);
+  pointer-events: none;
+  font-weight: 600;
+}
+
+.figma-frame255.is-step-1 .figma-frame255__title--new {
+  opacity: 1;
+  filter: blur(0px);
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+  animation: figma-glow-pulse 2.5s infinite alternate ease-in-out;
+}
+
+/* Soft elegant glow pulse effect */
+@keyframes figma-glow-pulse {
+  0% {
+    text-shadow: 
+      0 0 10px rgba(0, 44, 95, 0.15), 
+      0 0 20px rgba(146, 171, 233, 0.1);
+  }
+  100% {
+    text-shadow: 
+      0 0 18px rgba(0, 44, 95, 0.45), 
+      0 0 30px rgba(146, 171, 233, 0.3),
+      0 0 5px rgba(255, 255, 255, 0.8);
+  }
+}
+
+.figma-frame255__process {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+  max-width: 1100px;
+  transition: opacity 0.9s ease, transform 1.05s cubic-bezier(.22,1,.36,1), filter 0.8s ease;
+  transition-delay: var(--rd, 0ms);
+}
+
+.figma-frame255__process-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(14px, 1.8vh, 20px) clamp(16px, 2vw, 28px);
+  background: rgba(255, 255, 255, 0.65);
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
+  border-radius: 25px;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.02);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  text-align: center;
+  min-height: 120px;
+  box-sizing: border-box;
+}
+
+.figma-frame255__process-title {
+  font-family: 'Pretendard', var(--sans);
+  font-weight: 600;
+  font-size: clamp(16px, 1.3vw, 19.5px);
+  line-height: 1.2;
+  color: #000000;
+  margin-bottom: 4px;
+}
+
+.figma-frame255__process-subtitle {
+  font-family: 'Pretendard', var(--sans);
+  font-weight: 400;
+  font-size: clamp(16px, 1.3vw, 19.5px);
+  line-height: 1.2;
+  color: #41474E;
+  margin-bottom: 8px;
+}
+
+.figma-frame255__process-desc {
+  font-family: 'Pretendard', var(--sans);
+  font-weight: 400;
+  font-size: clamp(12px, 0.9vw, 14px);
+  line-height: 1.25;
+  color: #7C838C;
+}
+
+.figma-frame255__process-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.figma-frame255__process-arrow svg {
+  width: clamp(20px, 2.2vw, 28px);
+  height: auto;
+  opacity: 0.7;
+}
+
+.figma-frame255__cards {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  justify-content: center;
+  transition: opacity 0.9s ease, transform 1.05s cubic-bezier(.22,1,.36,1), filter 0.8s ease;
+  transition-delay: var(--rd, 0ms);
+}
+
+.figma-frame255__card-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.figma-frame255__card-tag {
+  padding: 5px 14px;
+  border-radius: 389.42px;
+  background: linear-gradient(169.38deg, rgba(255, 255, 255, 0.1) 2.63%, rgba(253, 252, 251, 0.1) 92.11%);
+  box-shadow: inset 0px -2.99px 23.9px #FFFFFF, inset 0px 11.04px 22.08px rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  font-family: 'Pretendard', var(--sans);
+  font-weight: 500;
+  font-size: clamp(14px, 1.1vw, 16.5px);
+  color: #002C5F;
+  text-align: center;
+}
+
+.figma-frame255__card-content {
+  width: 100%;
+  min-height: 190px;
+  background: linear-gradient(180deg, rgba(220, 220, 220, 0.28) 0%, rgba(215, 225, 250, 0.57) 60.1%, rgba(214, 226, 255, 0.62) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 28px;
+  padding: clamp(20px, 2.8vh, 28px) clamp(24px, 3vw, 40px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+  box-sizing: border-box;
+  box-shadow: 0 10px 30px rgba(31, 38, 135, 0.02);
+}
+
+.figma-frame255__card-content p {
+  font-family: 'Pretendard', var(--sans);
+  font-weight: 400;
+  font-size: clamp(15px, 1.3vw, 18.5px);
+  line-height: 1.4;
+  color: #000000;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.figma-frame255__card-content p strong {
+  font-weight: 600;
+  color: #000000;
+}
+
+.figma-frame255__card-highlight {
+  border-top: 1px dashed rgba(0, 44, 95, 0.12);
+  padding-top: 10px;
+}
+
+.figma-frame255__bottom-panel {
+  width: 100%;
+  max-width: 1200px;
+  background: linear-gradient(180deg, rgba(220, 220, 220, 0.28) 0%, rgba(215, 225, 250, 0.57) 60.1%, rgba(214, 226, 255, 0.62) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 28px;
+  padding: clamp(20px, 2.5vh, 26px) clamp(24px, 3.5vw, 48px);
+  box-sizing: border-box;
+  box-shadow: 0 10px 30px rgba(31, 38, 135, 0.02);
+  transition: opacity 0.9s ease, transform 1.05s cubic-bezier(.22,1,.36,1), filter 0.8s ease;
+  transition-delay: var(--rd, 0ms);
+}
+
+.figma-frame255__bottom-grid {
+  display: flex;
+  flex-direction: row;
+  gap: clamp(24px, 4vw, 64px);
+  width: 100%;
+}
+
+.figma-frame255__bottom-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.figma-frame255__bottom-item {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.figma-frame255__bottom-num {
+  font-family: 'Pretendard', var(--sans);
+  font-weight: 600;
+  font-size: clamp(14px, 1.1vw, 16.5px);
+  color: #131332;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.figma-frame255__bottom-text {
+  font-family: 'Pretendard', var(--sans);
+  font-weight: 400;
+  font-size: clamp(13px, 1vw, 15px);
+  color: #5C5C72;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+}
+
+/* Dim other elements when step 1 is active (exactly matching user's reference image) */
+.figma-frame255.is-step-1 .figma-frame255__process,
+.figma-frame255.is-step-1 .figma-frame255__cards,
+.figma-frame255.is-step-1 .figma-frame255__bottom-panel,
+.figma-frame255.is-step-1 .figma-frame255__tag {
+  opacity: 0.15;
+  filter: grayscale(20%) blur(0.5px);
+  transition-delay: 0ms !important;
+}
+
+/* ---------- responsive (mobile/tablet) ---------- */
+@media (max-width: 900px) {
+  .figma-frame255__content {
+    padding: 40px 20px;
+    gap: 20px;
+    height: auto;
+    overflow-y: auto;
+  }
+
+  .figma-frame255__process {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .figma-frame255__process-arrow {
+    transform: rotate(90deg);
+    margin: 2px 0;
+  }
+
+  .figma-frame255__process-box {
+    width: 100%;
+    min-height: auto;
+    padding: 16px;
+  }
+
+  .figma-frame255__cards {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .figma-frame255__card-content {
+    min-height: auto;
+    padding: 20px;
+  }
+
+  .figma-frame255__bottom-grid {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .figma-frame255__bottom-panel {
+    padding: 20px;
+  }
+}

@@ -1,0 +1,452 @@
+/* ============================================================
+   Figma slides — page 1 (cover) & page 2 (ownership)
+   ============================================================ */
+
+.deck-rest {
+  display: contents;
+}
+
+.slide.figma-slide {
+  font-family: var(--sans);
+  --figma-navy: #002c5f;
+  --figma-ink: #151d5b;
+  --figma-blue-soft: #d6e2ff;
+  --bg: #eef3ff;
+  --ink: var(--figma-ink);
+  --muted: #4a5270;
+  --line: rgba(21, 29, 91, 0.12);
+  --accent: var(--figma-navy);
+  --accent-bright: #4d6dff;
+  padding: 0;
+  overflow: hidden;
+  justify-content: flex-start;
+}
+
+.figma-quote-mark {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: normal;
+}
+
+.slide.figma-slide .inner {
+  display: none;
+}
+
+.grainient-container,
+.dark-veil-canvas {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: block;
+}
+
+.figma-slide__inner {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 1180px);
+  margin: 0 auto;
+  height: 100%;
+  min-height: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: clamp(72px, 10vh, 120px) clamp(24px, 5vw, 64px) clamp(48px, 8vh, 88px);
+}
+
+/* ---------- shared figma pill ---------- */
+.figma-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 14px;
+  border-radius: 999px;
+  font-size: clamp(13px, 1vw, 15px);
+  font-weight: 500;
+  color: #000;
+  position: relative;
+  box-shadow:
+    inset 0 -2px 17px rgba(255, 255, 255, 1),
+    inset 0 8px 16px rgba(255, 255, 255, 0.5);
+}
+
+.figma-pill::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(178deg, rgba(255, 255, 255, 0.12) 3%, rgba(253, 252, 251, 0.12) 92%);
+  z-index: -1;
+}
+
+.figma-pill--sm {
+  font-size: clamp(12px, 0.9vw, 14px);
+  color: var(--figma-navy);
+  letter-spacing: -0.02em;
+}
+
+.figma-pill--gradient {
+  color: transparent;
+  background: linear-gradient(90deg, #002c5f 0%, #000 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-size: clamp(10px, 0.85vw, 12px);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ---------- silk background (ford / nadella) ---------- */
+.figma-silk {
+  background: #E0E7EF;
+  text-align: center;
+  position: relative;
+}
+
+.figma-silk__bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* 기존 정적 글로우 레이어 제거 (Silk 배경으로 대체) */
+
+/* ---------- deck nav (figma style) ---------- */
+.deck-nav {
+  position: fixed;
+  left: clamp(24px, 3vw, 43px);
+  bottom: clamp(56px, 8vh, 88px);
+  z-index: 60;
+}
+
+.deck-nav__track {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 18px 0;
+  width: 26px;
+  border-radius: 303px;
+  background: rgba(130, 130, 130, 0.3);
+  mix-blend-mode: darken;
+  backdrop-filter: blur(4px);
+}
+
+.deck-nav__row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 12px;
+}
+
+.deck-nav__row.active {
+  justify-content: flex-start;
+}
+
+.deck-nav__item {
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+}
+
+.deck-nav__dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(240, 240, 240, 0.8);
+  display: block;
+}
+
+.deck-nav__pill {
+  width: 26px;
+  height: 30px;
+  border-radius: 303px;
+  background: linear-gradient(161deg, #bfd6ff 3.7%, #fdfcfb 132%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: #57597e;
+  font-family: var(--mono);
+  letter-spacing: 0.04em;
+}
+
+.deck-nav__label {
+  position: absolute;
+  left: 34px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 5px 11px;
+  border-radius: 280px;
+  background: linear-gradient(177deg, rgba(168, 190, 230, 0.73) 2.6%, rgba(253, 252, 251, 0.73) 92%);
+  box-shadow: inset 0 8px 16px rgba(255, 255, 255, 0.8);
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--figma-navy);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* ---------- chrome overrides on figma slides ---------- */
+body.on-figma {
+  background: #eef3ff;
+}
+
+body.on-figma #brand {
+  left: clamp(24px, 3vw, 40px);
+  color: transparent;
+  background: linear-gradient(90deg, #002c5f 0%, #000 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-size: 12.5px;
+  letter-spacing: 0.14em;
+  gap: 10px;
+}
+
+body.on-figma #brand .mark {
+  width: 26px;
+  height: 9px;
+  background: url("/images/figma/menu-icon.svg") center / contain no-repeat;
+  border: none;
+}
+
+body.on-figma #brand .mark::before,
+body.on-figma #brand .mark::after {
+  display: none;
+}
+
+body.on-figma #counter {
+  color: var(--figma-ink);
+}
+
+body.on-figma #counter b {
+  color: var(--figma-navy);
+  font-weight: 600;
+}
+
+/* cover slide (initial state) overrides for figma presentation */
+body.on-figma.is-initial-state #brand {
+  color: transparent !important;
+  opacity: 1 !important;
+}
+
+body.on-figma.is-initial-state #counter {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+body.on-figma #progress .track {
+  background: rgba(21, 29, 91, 0.14);
+}
+
+body.on-figma #progress i {
+  background: linear-gradient(90deg, #002c5f, #4d6dff);
+}
+
+body.on-figma #hint {
+  left: auto !important;
+  right: clamp(24px, 3vw, 43px) !important;
+  bottom: clamp(24px, 4vh, 32px) !important;
+  color: var(--figma-navy) !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.02em !important;
+  text-transform: none !important;
+  gap: 10px !important;
+  display: flex !important;
+  align-items: center !important;
+  flex-direction: row !important;
+  z-index: 100 !important;
+  opacity: 1;
+  transition: opacity 0.6s ease;
+}
+
+body.on-figma #hint .hint-icon {
+  width: 32px !important;
+  height: 32px !important;
+  background: #eef3ff !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: var(--figma-navy) !important;
+}
+
+body.on-figma #hint .hint-icon svg {
+  width: 14px !important;
+  height: 14px !important;
+}
+
+body.on-figma #hint .key {
+  display: none;
+}
+
+body.on-figma #hint::after {
+  display: none;
+}
+
+/* ---------- shared glass cards & panels (pages 10–14) ---------- */
+.figma-glass-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: min(100%, 294px);
+  padding: 14px 14px 18px;
+  border-radius: 18px;
+  border: 0.9px solid #fff;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.72) 100%);
+  text-align: left;
+}
+
+/* Flip specific styles for page 11 */
+.figma-claim .figma-glass-card {
+  position: relative;
+  height: 300px; /* 340px에서 300px로 축소하여 가로형 비율 강조 */
+  perspective: 1000px;
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.figma-glass-card__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.figma-glass-card.is-flipped .figma-glass-card__inner {
+  transform: rotateY(180deg);
+}
+
+.figma-glass-card__front,
+.figma-glass-card__back {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 18px;
+  border: 0.9px solid #fff;
+  padding: 14px 14px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.figma-glass-card__front {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.72) 100%);
+}
+
+.figma-glass-card__back {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.95) 100%);
+  transform: rotateY(180deg);
+  justify-content: center;
+}
+
+.figma-glass-card__back-text {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--figma-navy);
+  text-align: left;
+}
+
+.figma-glass-card__thumb {
+  width: 100%;
+  aspect-ratio: 265 / 145;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.figma-glass-card__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px; /* 24px에서 12px로 줄여서 텍스트 밀집도 향상 */
+  width: 100%;
+}
+
+.figma-glass-card__code {
+  font-size: 13px;
+  letter-spacing: -0.02em;
+  color: #000;
+}
+
+.figma-glass-card__title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.14;
+  letter-spacing: -0.02em;
+  color: var(--figma-ink);
+}
+
+.figma-glass-card__link {
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.5;
+  color: #000;
+}
+
+.figma-glass-card__desc {
+  font-size: 11px;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  color: #000;
+}
+
+.figma-glass-card__desc ul {
+  margin: 0;
+  padding-left: 1.1em;
+}
+
+.figma-glass-card__desc li {
+  margin: 0;
+}
+
+.figma-glass-card__desc strong {
+  font-weight: 600;
+}
+
+.figma-glass-card--compact .figma-glass-card__body {
+  gap: 10px;
+}
+
+.figma-glass-panel {
+  min-height: 123px;
+  padding: 24px 28px;
+  border-radius: 20px;
+  border: 1px solid #fff;
+  background: linear-gradient(
+    180deg,
+    rgba(220, 220, 220, 0.28) 0%,
+    rgba(215, 225, 250, 0.57) 60%,
+    rgba(214, 226, 255, 0.62) 100%
+  );
+}
+
+.figma-glass-panel ul {
+  margin: 0;
+  padding-left: 1.2em;
+  font-size: clamp(14px, 1.4vw, 17px);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: #000;
+}
+
+.figma-glass-panel li + li {
+  margin-top: 6px;
+}
+
+.figma-glass-panel strong {
+  font-weight: 600;
+}
+

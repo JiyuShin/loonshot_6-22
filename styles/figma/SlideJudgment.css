@@ -1,0 +1,314 @@
+/* ---------- judgment (page 9) ---------- */
+.figma-judgment {
+  background: url("/images/figma/judgment-bg.png") center / cover no-repeat;
+  position: relative;
+}
+
+/* 8-9페이지 심리스 브릿지 (상단) */
+.figma-judgment::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 45vh; /* 자연스러운 전환을 위해 높이 확대 */
+  background: linear-gradient(to bottom, 
+    #eef3ff 0%, 
+    rgba(238, 243, 255, 0.95) 15%, 
+    rgba(238, 243, 255, 0.7) 40%, 
+    rgba(238, 243, 255, 0.2) 70%, 
+    transparent 100%
+  );
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 10;
+  pointer-events: none;
+  transform: translateY(calc(var(--scroll-progress-risk, 0) * -25%)); /* 진행도에 따라 위에서 아래로 하강 */
+  opacity: calc(1 - var(--scroll-progress-risk, 0));
+  transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.2s ease-out;
+}
+
+.figma-judgment__bg {
+  position: absolute;
+  inset: 0;
+  display: none;
+  pointer-events: none;
+}
+
+.figma-judgment__object {
+  position: absolute;
+  height: 600.76px;
+  left: -18.41%;
+  right: 38.33%;
+  top: calc(50% - 600.76px / 2 + 214.07px);
+  z-index: 2;
+  background: none;
+  opacity: 0;
+  filter: brightness(1.08) saturate(0.72) blur(8px);
+  transform: translateY(14px);
+  transition:
+    opacity 950ms ease,
+    filter 1100ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 1100ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: 1120ms;
+  pointer-events: none;
+}
+
+.figma-judgment__right-panel {
+  position: absolute;
+  right: clamp(42px, 6vw, 108px);
+  top: calc(50% + 116px);
+  z-index: 3;
+  width: min(46vw, 760px);
+  aspect-ratio: 808 / 344;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.figma-judgment__right-panel-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 800ms ease;
+}
+
+.figma-judgment__right-panel-svg--top {
+  clip-path: inset(0 0 44.2% 0);
+  transition-delay: 1440ms;
+}
+
+.figma-judgment__right-panel-svg--bottom {
+  clip-path: inset(55.8% 0 0 0);
+  transition-delay: 1740ms;
+}
+
+.figma-judgment.on .figma-judgment__object {
+  opacity: 0.59;
+  filter: brightness(1.08) saturate(0.72) blur(0);
+  transform: translateY(0);
+}
+
+.figma-judgment.on .figma-judgment__right-panel-svg {
+  opacity: 1;
+}
+
+.figma-judgment__glow--top {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 153px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.81), rgba(255, 255, 255, 0));
+}
+
+.figma-judgment__glow--bottom {
+  position: absolute;
+  inset: auto 0 0;
+  height: 25vh;
+  background: linear-gradient(to bottom, transparent, rgba(136, 178, 239, 0.2));
+  z-index: 1;
+}
+
+/* 9-10페이지 심리스 브릿지 (하단) */
+.figma-judgment::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 18vh;
+  background: linear-gradient(to bottom, 
+    transparent 0%, 
+    rgba(219, 230, 255, 0.8) 80%, 
+    #dbe6ff 100%
+  );
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 10;
+  pointer-events: none;
+  transition: all 0.8s ease;
+  opacity: 1;
+}
+
+.figma-judgment.on::after {
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  opacity: 0;
+}
+
+.figma-judgment__content {
+  align-items: center;
+  text-align: center;
+}
+
+.figma-judgment__content .figma-pill {
+  margin-bottom: clamp(18px, 3vh, 32px);
+}
+
+.figma-judgment__top-badge {
+  display: block;
+  width: min(247px, 34vw);
+  height: auto;
+  margin: 0 auto clamp(18px, 2.5vh, 28px);
+}
+
+.figma-judgment__headline {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2em;
+  font-size: clamp(28px, 4.1vw, 56px);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #000;
+}
+
+.figma-judgment__headline-indent {
+  font-weight: 500;
+  color: #000;
+}
+
+.figma-judgment__headline-muted {
+  color: #000;
+}
+
+.figma-judgment__headline strong {
+  font-weight: 700;
+  color: #151D5B;
+}
+
+.figma-judgment__headline-accent {
+  color: #01336e;
+  font-weight: 600;
+}
+
+.figma-judgment__main {
+  width: 100%;
+  max-width: 1173px;
+  margin-top: clamp(28px, 4vh, 48px);
+  display: grid;
+  grid-template-columns: 1.5fr 0.5fr;
+  gap: clamp(20px, 3vw, 36px);
+  align-items: stretch;
+}
+
+.figma-judgment__table-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.figma-judgment__q-badge {
+  position: absolute;
+  left: 24px;
+  top: -24px;
+  width: 48px;
+  height: 48px;
+  background: #ffdb5e;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 700;
+  color: #000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 3;
+}
+
+.figma-judgment__table {
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  background: linear-gradient(92deg, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.75));
+  padding: 40px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  height: 100%;
+  justify-content: center;
+}
+
+.figma-judgment__table-head,
+.figma-judgment__table-row {
+  display: grid;
+  grid-template-columns: 160px 1.5fr 180px;
+  text-align: left;
+  font-size: clamp(13px, 1.1vw, 17px);
+  line-height: 1.4;
+  color: #000;
+}
+
+.figma-judgment__table-head {
+  font-weight: 600;
+  color: #002C5F;
+  font-size: clamp(11px, 0.9vw, 13px);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: -10px;
+}
+
+.figma-judgment__table-row {
+  font-weight: 400;
+}
+
+.figma-judgment__table-head span,
+.figma-judgment__table-row span {
+  padding: 0 24px;
+  white-space: nowrap;
+}
+
+.figma-judgment__table-head span:not(:last-child),
+.figma-judgment__table-row span:not(:last-child) {
+  border-right: 1px solid rgba(0, 44, 95, 0.12);
+}
+
+.figma-judgment__table-row + .figma-judgment__table-row {
+  border-top: none;
+}
+
+.figma-judgment__layer {
+  font-weight: 400;
+}
+
+.figma-judgment__side {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  align-items: center;
+  width: 100%;
+}
+
+.figma-judgment__side-card {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.8) 100%);
+  padding: clamp(24px, 3vh, 32px) 28px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(61, 62, 68, 0.05);
+}
+
+.figma-judgment__side-card h3 {
+  margin: 0 0 12px;
+  font-size: clamp(15px, 1.2vw, 18px);
+  font-weight: 600;
+  color: var(--figma-navy);
+}
+
+.figma-judgment__side-card p {
+  margin: 0;
+  font-size: clamp(11px, 0.9vw, 13px);
+  line-height: 1.5;
+  color: #000;
+  opacity: 0.7;
+}
+
+.figma-judgment__side-arrow {
+  width: 80px;
+  height: auto;
+  margin: -10px 0;
+  opacity: 0.4;
+}
+

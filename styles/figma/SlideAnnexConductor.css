@@ -1,0 +1,390 @@
+/* ---------- annex conductor (page 21) ---------- */
+.figma-annex-conductor {
+  background: #ffffff;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Identical background as Slide 19 & Slide 20 for seamless UX */
+.figma-annex-conductor__bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(82.19% 129.83% at 0% 0%, rgba(255, 255, 255, 0.47) 0%, rgba(47, 121, 255, 0.47) 45.98%, rgba(182, 194, 255, 0.47) 100%), #FFFFFF;
+  transform: matrix(1, 0, 0, -1, 0, 0);
+  z-index: 1;
+}
+
+.figma-annex-conductor__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  padding-top: clamp(60px, 8.5vh, 100px); /* Positioned elegantly upper-middle */
+  position: relative;
+  z-index: 2;
+}
+
+.figma-annex-conductor .figma-slide__inner {
+  width: min(100%, 1200px) !important;
+  max-width: 96% !important;
+}
+
+/* Standardized capsule pill for 관계 명시 (matching Slide 19/20 perfectly) */
+.figma-annex-conductor .figma-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 14px;
+  border-radius: 999px;
+  font-family: 'Pretendard', var(--sans);
+  font-size: clamp(13px, 1vw, 15px);
+  font-weight: 500;
+  color: #000000;
+  position: relative;
+  background: radial-gradient(70% 70% at 50% 50%, rgba(214, 226, 255, 0.45) 0%, rgba(255, 255, 255, 0.9) 100%);
+  box-shadow:
+    inset 0 -2px 17px rgba(255, 255, 255, 1),
+    inset 0 8px 16px rgba(255, 255, 255, 0.5),
+    0px 4px 10px rgba(0, 44, 95, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  transition: opacity 0.9s ease, transform 1.05s cubic-bezier(.22,1,.36,1), filter 0.8s ease;
+  transition-delay: var(--rd, 0ms);
+}
+
+.figma-annex-conductor .figma-pill::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(178deg, rgba(255, 255, 255, 0.25) 3%, rgba(240, 245, 255, 0.15) 92%);
+  z-index: -1;
+}
+
+/* Headline */
+.figma-annex-conductor__headline {
+  margin: clamp(14px, 2vh, 20px) 0 0;
+  font-family: 'Pretendard', var(--sans);
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #000000;
+  transition: opacity 0.9s ease, transform 1.05s cubic-bezier(.22,1,.36,1), filter 0.8s ease;
+  transition-delay: var(--rd, 0ms);
+}
+
+/* Comparison flex row - centered, elegant size matching second image exactly */
+.figma-annex-conductor__comparison {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 43.5px;
+  width: 1148.75px;
+  height: 402.32px;
+  position: relative;
+  margin-top: clamp(36px, 5vh, 48px); /* Moved slightly up */
+  transition: opacity 0.9s ease, transform 1.05s cubic-bezier(.22,1,.36,1), filter 0.8s ease;
+  transition-delay: var(--rd, 0ms);
+}
+
+/* Desktop absolute coordinates & dimensions precisely matching Figma specifications */
+@media (min-width: 1201px) {
+  .figma-annex-conductor__side {
+    width: 552.80px;
+    height: 402.32px;
+    position: relative;
+    box-sizing: border-box;
+  }
+
+  .figma-annex-conductor__side-bg {
+    position: absolute;
+    width: 552.80px;
+    height: 344.85px;
+    left: 0px;
+    top: 57.47px;
+    border-radius: 19.23px;
+    box-sizing: border-box;
+    z-index: 1;
+  }
+
+  .figma-annex-conductor__side--before .figma-annex-conductor__side-bg {
+    background: linear-gradient(91.5deg, rgba(255, 255, 255, 0.2) 9.82%, rgba(255, 255, 255, 0.99) 99.07%);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+  }
+
+  .figma-annex-conductor__side--after .figma-annex-conductor__side-bg {
+    background: linear-gradient(90.54deg, rgba(255, 255, 255, 0.2) -0.09%, #FFFFFF 99.01%);
+    box-shadow: 0px 10px 18px rgba(147, 183, 255, 0.25);
+    border: 1.5px solid rgba(147, 183, 255, 0.2);
+  }
+
+  .figma-annex-conductor__side-title {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    left: 0px;
+    top: 12.5px;
+    margin: 0;
+    font-family: 'Pretendard', var(--sans);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16.3px;
+    line-height: 150%;
+    letter-spacing: -0.02em;
+    color: #002C5F;
+    z-index: 2;
+  }
+
+  .figma-annex-conductor__table {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+  }
+
+  .figma-annex-conductor__line {
+    position: absolute;
+    left: 44.94px;
+    width: 465.02px;
+    height: 1px;
+    background-color: #7C838C;
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .figma-annex-conductor__line--1 {
+    top: 164.25px;
+  }
+
+  .figma-annex-conductor__line--2 {
+    top: 234px;
+  }
+
+  .figma-annex-conductor__line--3 {
+    top: 303.75px;
+  }
+
+  .figma-annex-conductor__row {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .figma-annex-conductor__row--1 {
+    top: 117px;
+    height: 24.75px;
+  }
+
+  .figma-annex-conductor__row--2 {
+    top: 186.75px;
+    height: 24.75px;
+  }
+
+  .figma-annex-conductor__row--3 {
+    top: 256.5px;
+    height: 24.75px;
+  }
+
+  .figma-annex-conductor__row--4 {
+    top: 326.25px;
+    height: 24.75px;
+  }
+
+  .figma-annex-conductor__label {
+    position: absolute;
+    left: 47px;
+    top: 3px;
+    width: auto !important;
+    height: 18.75px;
+    font-family: 'Pretendard', var(--sans);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12.54px;
+    line-height: 150%;
+    letter-spacing: -0.02em;
+    color: #002C5F;
+  }
+
+  .figma-annex-conductor__value {
+    position: absolute;
+    top: 0px;
+    height: 24.75px;
+    font-family: 'Pretendard', var(--sans);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16.3px;
+    line-height: 150%;
+    letter-spacing: -0.02em;
+    color: #000000;
+    padding-left: 0 !important;
+    white-space: nowrap;
+  }
+
+  .figma-annex-conductor__value.is-blue {
+    color: #2C57E0;
+  }
+
+  .figma-annex-conductor__side--before .figma-annex-conductor__row--1 .figma-annex-conductor__value {
+    left: 161.37px;
+  }
+
+  .figma-annex-conductor__side--after .figma-annex-conductor__row--1 .figma-annex-conductor__value {
+    left: 168.12px;
+  }
+
+  .figma-annex-conductor__side--before .figma-annex-conductor__row--2 .figma-annex-conductor__value {
+    left: 222.04px;
+  }
+
+  .figma-annex-conductor__side--after .figma-annex-conductor__row--2 .figma-annex-conductor__value {
+    left: 210.04px;
+  }
+
+  .figma-annex-conductor__side--before .figma-annex-conductor__row--3 .figma-annex-conductor__value {
+    left: 211.81px;
+  }
+
+  .figma-annex-conductor__side--after .figma-annex-conductor__row--3 .figma-annex-conductor__value {
+    left: 227.56px;
+  }
+
+  .figma-annex-conductor__side--before .figma-annex-conductor__row--4 .figma-annex-conductor__value {
+    left: 226.41px;
+  }
+
+  .figma-annex-conductor__side--after .figma-annex-conductor__row--4 .figma-annex-conductor__value {
+    left: 143.16px;
+  }
+
+  .figma-annex-conductor__arrow-wrap {
+    position: absolute;
+    left: calc(50% - 15px); /* Shifted slightly to the left for perfect visual balance */
+    top: calc(50% + 28.73px); /* Shifted down to center with the background rectangle */
+    transform: translate(-50%, -50%);
+    width: 91.50px;
+    height: 58.53px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+  }
+}
+
+/* Arrow Wrapper in the middle */
+.figma-annex-conductor__arrow-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 122px;
+  height: 78.04px;
+  flex-shrink: 0;
+}
+
+.figma-annex-conductor__arrow-wrap svg {
+  width: 100%;
+  height: auto;
+}
+
+/* ---------- responsive (mobile/tablet) ---------- */
+@media (max-width: 1200px) {
+  .figma-annex-conductor__comparison {
+    flex-direction: column !important;
+    width: 90% !important;
+    height: auto !important;
+    gap: 15px !important;
+    margin-top: 24px !important;
+  }
+
+  .figma-annex-conductor__line {
+    display: none !important;
+  }
+
+  .figma-annex-conductor__row {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    padding: 13.5px 0 !important;
+    border-top: 1px solid rgba(124, 131, 140, 0.16) !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .figma-annex-conductor__row:first-of-type {
+    border-top: none !important;
+  }
+
+  .figma-annex-conductor__label {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 65px !important;
+    height: auto !important;
+    font-size: 14.5px !important;
+  }
+
+  .figma-annex-conductor__value {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: auto !important;
+    height: auto !important;
+    font-size: 16.5px !important;
+    padding-left: 20px !important;
+    white-space: normal !important;
+  }
+
+  .figma-annex-conductor__side-bg {
+    display: none !important;
+  }
+
+  .figma-annex-conductor__side {
+    width: 100% !important;
+    height: auto !important;
+    padding: 26px 36px !important;
+    box-sizing: border-box;
+    border-radius: 25.6px;
+  }
+
+  .figma-annex-conductor__side--before {
+    background: linear-gradient(91.5deg, rgba(255, 255, 255, 0.2) 9.82%, rgba(255, 255, 255, 0.99) 99.07%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.7) !important;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.015) !important;
+  }
+
+  .figma-annex-conductor__side--after {
+    background: linear-gradient(90.54deg, rgba(255, 255, 255, 0.2) -0.09%, #FFFFFF 99.01%) !important;
+    box-shadow: 0px 10px 18px rgba(147, 183, 255, 0.25) !important;
+    border: 1.5px solid rgba(147, 183, 255, 0.2) !important;
+  }
+
+  .figma-annex-conductor__side-title {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: auto !important;
+    text-align: center !important;
+    font-size: 19px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .figma-annex-conductor__table {
+    position: relative !important;
+    inset: auto !important;
+    width: 100% !important;
+  }
+
+  .figma-annex-conductor__arrow-wrap {
+    transform: rotate(90deg) !important; /* Points down in mobile */
+    height: 40px !important;
+    width: 40px !important;
+    margin: 15px 0 !important;
+  }
+}
+

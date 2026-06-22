@@ -1,0 +1,8 @@
+node_modules
+.next
+.env*.local
+.vercel
+old
+.claude
+*.mov
+.DS_Store

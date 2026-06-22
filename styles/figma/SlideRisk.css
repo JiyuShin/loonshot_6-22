@@ -1,0 +1,512 @@
+/* ---------- risk (page 8) ---------- */
+.figma-risk {
+  background:
+    radial-gradient(34.82% 32.03% at 104.35% 34.16%, rgba(255, 255, 255, 0.89) 5.36%, rgba(240, 243, 255, 0) 100%),
+    radial-gradient(26.64% 98.21% at 3.46% 78.76%, rgba(255, 255, 255, 0.7) 0%, rgba(229, 238, 255, 0) 100%),
+    linear-gradient(0deg, rgba(215, 225, 254, 0.85) 7.44%, rgba(255, 255, 255, 0) 99.99%),
+    linear-gradient(27.22deg, rgba(218, 230, 255, 0.93) 21.9%, rgba(255, 255, 255, 0) 35.13%),
+    linear-gradient(257.08deg, rgba(255, 255, 255, 0) -2.09%, rgba(218, 223, 255, 0.8) 52.53%, #F2F7FF 94.32%),
+    #FFFFFF;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+/* 7-8페이지 심리스 브릿지 (상단) */
+.figma-risk::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 45vh; /* 그라디언트 영역을 25vh에서 45vh로 대폭 확대하여 배경 분리감 완전 차단 */
+  background: linear-gradient(to bottom, 
+    #ffffff 0%, 
+    rgba(255, 255, 255, 0.98) 25%, 
+    rgba(255, 255, 255, 0.85) 50%, 
+    rgba(255, 255, 255, 0.4) 75%, 
+    transparent 100%
+  );
+  backdrop-filter: blur(15px); /* 블러 강도를 높여 경계선을 한층 더 부드럽게 뭉갬 */
+  -webkit-backdrop-filter: blur(15px);
+  z-index: 10;
+  pointer-events: none;
+  transform: translateY(calc(var(--scroll-progress-capital, 0) * -25%)); /* 이동 속도를 늦춰(50% -> 25%) 그라디언트가 화면에 더 오래 머물도록 개선 */
+  opacity: calc(1 - var(--scroll-progress-capital, 0));
+  transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.2s ease-out;
+}
+
+/* figma-risk .rv override removed to allow standard sequential reveal animations */
+
+.figma-risk__bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.figma-risk__glow--a {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(80% 70% at 50% 30%, rgba(255, 255, 255, 0.95) 0%, rgba(151, 188, 255, 0.45) 40%, rgba(182, 194, 255, 0.2) 100%);
+  opacity: 0.55;
+}
+
+.figma-risk__glow--b {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(50% 40% at 100% 50%, rgba(77, 109, 255, 0.35), transparent 70%),
+    radial-gradient(45% 38% at 0% 50%, rgba(77, 109, 255, 0.28), transparent 68%);
+  filter: blur(14px);
+  opacity: 0.66;
+}
+
+/* 8-9페이지 심리스 브릿지 (하단) */
+.figma-risk::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 45vh; /* 자연스러운 전환을 위해 높이 확대 */
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(247, 249, 255, 0.2) 30%,
+    rgba(247, 249, 255, 0.7) 60%,
+    rgba(247, 249, 255, 0.95) 85%,
+    #f7f9ff 100%
+  );
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 10;
+  pointer-events: none;
+  transform: translateY(calc((1 - var(--scroll-progress-risk, 0)) * 25%)); /* 이동 속도를 늦춰(50% -> 25%) 그라디언트가 화면에 더 오래 머물도록 개선 */
+  opacity: var(--scroll-progress-risk, 0);
+  transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.2s ease-out;
+}
+
+.figma-risk__content {
+  align-items: center;
+  text-align: center;
+  transform: translateY(-30px);
+}
+
+.figma-risk__human {
+  position: absolute;
+  left: calc(clamp(36px, 5.5vw, 96px) - 430px);
+  bottom: -30px;
+  top: auto;
+  z-index: 1;
+  width: min(98vw, 1360px);
+  height: auto;
+  transform: none;
+  opacity: 0;
+  filter: blur(8px);
+  transition:
+    opacity 900ms ease,
+    filter 1000ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: 1040ms;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.figma-risk__eyebrow {
+  margin: 0;
+  font-size: clamp(11px, 0.9vw, 12px);
+  font-weight: 400;
+  background: linear-gradient(90deg, #002c5f, #79a3df);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.figma-risk__tag {
+  display: block;
+  height: 41px;
+  width: auto;
+  aspect-ratio: 506 / 50;
+  flex: none;
+  overflow: visible;
+}
+
+.figma-risk__top-badge {
+  display: block;
+  width: min(360px, 50vw);
+  height: auto;
+  margin: 0 auto max(0px, calc(clamp(18px, 3vh, 30px) - 20px));
+}
+
+.figma-risk__top-badge-text {
+  fill: #000000;
+  font-family: var(--sans);
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.figma-risk__headline {
+  margin: clamp(18px, 2.5vh, 28px) 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1em;
+  font-size: clamp(26px, 3.5vw, 48px);
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: #000;
+  min-height: 2.5em;
+  justify-content: center;
+}
+
+.figma-risk__headline-transition {
+  animation: fadeInHeadline 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes fadeInHeadline {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.figma-risk__headline-regular {
+  font-weight: 400;
+  color: #000;
+}
+
+.figma-risk__headline-highlight {
+  color: #0F2380;
+  font-weight: 700;
+}
+
+.figma-risk__summary {
+  margin: clamp(14px, 2vh, 24px) 0 0;
+  max-width: 34em;
+  font-size: clamp(13px, 1.1vw, 15px);
+  font-weight: 500;
+  line-height: 1.55;
+  color: var(--figma-ink);
+}
+
+.figma-risk__system-diagram {
+  position: absolute;
+  left: 50%;
+  top: calc(50.5% + 16px);
+  z-index: 3;
+  display: block;
+  width: min(68vw, 980px);
+  aspect-ratio: 1322 / 385;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  filter: blur(8px);
+  transition:
+    opacity 900ms ease,
+    filter 1000ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: 1040ms;
+  pointer-events: none;
+}
+
+.figma-risk__system-diagram::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  left: 0.024%;
+  top: 0.083%;
+  z-index: 0;
+  width: 74.309%;
+  height: 99.176%;
+  border-radius: 25.3231px;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.figma-risk__system-diagram-svg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+
+.figma-risk__system-diagram-svg text {
+  font-family: var(--sans);
+}
+
+.figma-risk__system-kicker {
+  fill: #002C5F;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.figma-risk__system-kicker--medium {
+  font-weight: 500;
+}
+
+.figma-risk__system-kicker--layer {
+  fill: #0F2380;
+  fill-opacity: 0.6;
+}
+
+.figma-risk__system-title {
+  fill: #01336E;
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.figma-risk__system-title-en {
+  fill: #01336E;
+  font-size: 21px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.figma-risk__system-def {
+  fill: #000000;
+  font-size: 23px;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+}
+
+.figma-risk__system-nature-line {
+  fill: #0F2380;
+}
+
+.figma-risk__system-body {
+  fill: #000000;
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+.figma-risk__system-card-title {
+  fill: #151D5B;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.figma-risk__system-card-body {
+  fill: #000000;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+.figma-risk__system-card-body--medium {
+  font-weight: 500;
+}
+
+.figma-risk__bottom-banner {
+  position: absolute;
+  left: calc(50% + 10px);
+  top: calc(50.5% + 216px);
+  z-index: 4;
+  display: block;
+  width: min(69vw, 1000px);
+  height: auto;
+  transform: translateX(-50%);
+  opacity: 0;
+  filter: blur(8px);
+  transition:
+    opacity 850ms ease,
+    filter 950ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: 1480ms;
+  pointer-events: none;
+}
+
+.figma-risk__bottom-banner text {
+  font-family: var(--sans);
+}
+
+.figma-risk__bottom-banner-main {
+  fill: #151D5B;
+  font-size: 25px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.figma-risk__bottom-banner-sub {
+  fill: #000000;
+  font-size: 19px;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+}
+
+.figma-risk__bottom-banner-strong {
+  font-weight: 600;
+}
+
+.figma-risk__left-lines-container {
+  position: absolute;
+  left: -23.2%;
+  top: 2.65%;
+  z-index: 20;
+  display: block;
+  width: 24.5%;
+  height: 82.65%;
+  pointer-events: none;
+}
+
+.figma-risk__left-lines-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.figma-risk__dot {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #24347D;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 4px rgba(36, 52, 125, 0.4);
+}
+
+.figma-risk.on .figma-risk__human,
+.figma-risk.on .figma-risk__system-diagram,
+.figma-risk.on .figma-risk__bottom-banner {
+  opacity: 1;
+  filter: blur(0);
+}
+
+.figma-risk__main-area {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: clamp(28px, 4vh, 48px);
+  min-height: 320px;
+}
+
+.figma-risk__diagram {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: clamp(12px, 2vw, 28px);
+  align-items: center;
+  width: min(100%, 900px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition-delay: var(--rd, 0ms);
+}
+
+.figma-risk.is-step-2 .figma-risk__eyebrow.rv,
+.figma-risk.is-step-2 .figma-risk__headline.rv,
+.figma-risk.is-step-2 .figma-risk__summary.rv {
+  opacity: 1 !important;
+  transform: none !important;
+  visibility: visible !important;
+}
+
+/* .figma-risk.is-step-2 .figma-risk__diagram rule removed to keep the diagram visible when scrollStep changes */
+
+.figma-risk__solution-text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) translateY(20px);
+  font-size: clamp(24px, 3.5vw, 48px);
+  font-weight: 700;
+  color: var(--figma-navy);
+  text-align: center;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  pointer-events: none;
+}
+
+.figma-risk.is-step-2 .figma-risk__solution-text {
+  opacity: 1;
+  transform: translate(-50%, -50%) translateY(0);
+  pointer-events: auto;
+}
+
+.figma-risk__node {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.figma-risk__circle {
+  width: min(100%, 274px);
+  height: auto;
+  animation: loop-gradient-spin 18s linear infinite; /* SlideLoop와 동일한 18초 주기의 은은한 그라데이션 회전 모션 적용 */
+}
+
+.figma-risk__node-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.figma-risk__node-title {
+  margin: 0;
+  font-size: clamp(18px, 1.6vw, 24px);
+  font-weight: 600;
+  color: var(--figma-ink);
+}
+
+.figma-risk__node-sub {
+  margin: 0;
+  font-size: clamp(14px, 1.1vw, 18px);
+  color: rgba(21, 29, 91, 0.4);
+}
+
+.figma-risk__flow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  min-width: 120px;
+}
+
+.figma-risk__flow-label {
+  margin: 0;
+  font-size: clamp(18px, 1.6vw, 24px);
+  font-weight: 600;
+  color: var(--figma-ink);
+}
+
+.figma-risk__flow-sub {
+  margin: 0;
+  font-size: clamp(14px, 1.1vw, 18px);
+  color: rgba(21, 29, 91, 0.4);
+}
+
+.figma-risk__flow-arrow {
+  width: 66px;
+  height: auto;
+  transform: rotate(-90deg);
+  margin-top: 8px;
+}
+
+.figma-risk__custom-cursor {
+  position: fixed;
+  z-index: 9999;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  padding: 8px 20px;
+  background: var(--figma-navy);
+  color: #fff;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  box-shadow: 0 8px 24px rgba(0, 44, 95, 0.3);
+  transition: transform 0.1s ease-out;
+}
+

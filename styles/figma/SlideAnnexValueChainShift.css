@@ -1,0 +1,224 @@
+/* ---------- annex value chain (page 20) ---------- */
+.figma-annex-vc {
+  background: #ffffff;
+  overflow: hidden;
+  position: relative;
+}
+
+.figma-annex-vc__bg {
+  position: absolute;
+  inset: 0;
+  /* Soft background radial-gradient with matrix flip precisely matching user's spec */
+  background: radial-gradient(82.19% 129.83% at 0% 0%, rgba(255, 255, 255, 0.47) 0%, rgba(47, 121, 255, 0.47) 45.98%, rgba(182, 194, 255, 0.47) 100%), #FFFFFF;
+  transform: matrix(1, 0, 0, -1, 0, 0);
+  z-index: 1;
+}
+
+.figma-annex-vc__bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 14px solid #FDFDFD;
+  filter: blur(27.1px);
+  transform: matrix(1, 0, 0, -1, 0, 0);
+  box-sizing: border-box;
+}
+
+.figma-annex-vc__content {
+  align-items: center;
+  text-align: center;
+  height: 100%;
+}
+
+/* Frame 448 - Main Content Container */
+.figma-annex-vc__frame-448 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  gap: 32px;
+
+  position: absolute;
+  width: 1152px;
+  height: 270px;
+  left: calc(50% - 1152px / 2);
+  top: 275px; /* Moved up from 339px to 275px to match SlideAnnexIntro and look more balanced */
+  z-index: 2;
+}
+
+/* Frame 20 - Pill Tag */
+.figma-annex-vc__pill {
+  box-sizing: border-box;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 14px; /* Standardized padding to match other pages */
+  gap: 10px;
+
+  width: auto;
+  min-width: unset; /* Removed min-width to align size with other pages */
+  height: auto; /* Changed from 50px to auto for a compact standard look */
+  white-space: nowrap;
+
+  background: linear-gradient(169.38deg, rgba(255, 255, 255, 0.1) 2.63%, rgba(253, 252, 251, 0.1) 92.11%);
+  box-shadow: inset 0px -2.99048px 23.9239px #FFFFFF, inset 0px 11.0418px 22.0836px rgba(255, 255, 255, 0.5), 0px 4px 10px rgba(0, 44, 95, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 389.42px;
+
+  font-family: 'Pretendard', var(--sans);
+  font-style: normal;
+  font-weight: 500;
+  font-size: clamp(13px, 1vw, 15px); /* Adjusted font size from 16px to standard 13-15px */
+  line-height: 1.2; /* Restored tight standard line height */
+  text-align: center;
+  color: #000000;
+  
+  transition: opacity 0.9s ease, transform 1.05s cubic-bezier(.22,1,.36,1), filter 0.8s ease;
+  transition-delay: var(--rd, 0ms);
+}
+
+.figma-annex-vc__pill::before {
+  display: none;
+}
+
+/* Frame 312 - Outer Content Stack */
+.figma-annex-vc__frame-312 {
+  width: 1152px;
+  height: 178px;
+  position: relative;
+}
+
+/* Frame 318 - Inner Content Stack */
+.figma-annex-vc__frame-318 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  gap: 40px;
+
+  position: absolute;
+  width: 1152px;
+  height: 196px;
+  left: 0px;
+  top: -8px;
+}
+
+/* Frame 311 - Title & Subtitle Stack */
+.figma-annex-vc__frame-311 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  gap: 20px;
+
+  width: 1152px;
+  height: 132px;
+}
+
+/* Main Title */
+.figma-annex-vc__main-title {
+  margin: 0;
+  height: 78px;
+  width: 100%;
+
+  font-family: 'Pretendard', var(--sans);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 64px;
+  line-height: 122%;
+  text-align: center;
+  letter-spacing: -0.02em;
+  color: #000000;
+  
+  transition: opacity 0.9s ease, transform 1.05s cubic-bezier(.22,1,.36,1), filter 0.8s ease;
+  transition-delay: var(--rd, 0ms);
+}
+
+/* Subtitle */
+.figma-annex-vc__sub-title {
+  margin: 0;
+  height: 44px;
+  width: 100%;
+
+  font-family: 'Pretendard', var(--sans);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 122%;
+  text-align: center;
+  letter-spacing: -0.02em;
+  color: #000000;
+  
+  transition: opacity 0.9s ease, transform 1.05s cubic-bezier(.22,1,.36,1), filter 0.8s ease;
+  transition-delay: var(--rd, 0ms);
+}
+
+.figma-annex-vc__highlight {
+  color: #2D58F3;
+  font-weight: 500;
+}
+
+/* Description text */
+.figma-annex-vc__description {
+  margin: 0;
+  height: 24px;
+  width: 100%;
+
+  font-family: 'Pretendard', var(--sans);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 122%;
+  text-align: center;
+  letter-spacing: -0.02em;
+  color: #002C5F;
+  
+  transition: opacity 0.9s ease, transform 1.05s cubic-bezier(.22,1,.36,1), filter 0.8s ease;
+  transition-delay: var(--rd, 0ms);
+}
+
+/* ---------- responsive (mobile/tablet) ---------- */
+@media (max-width: 1200px) {
+  .figma-annex-vc__frame-448 {
+    width: 90%;
+    left: 5%;
+    top: 200px;
+    height: auto;
+    gap: 24px;
+  }
+
+  .figma-annex-vc__frame-312 {
+    width: 100%;
+    height: auto;
+  }
+
+  .figma-annex-vc__frame-318 {
+    position: relative;
+    width: 100%;
+    height: auto;
+    top: 0;
+    gap: 30px;
+  }
+
+  .figma-annex-vc__frame-311 {
+    width: 100%;
+    height: auto;
+    gap: 15px;
+  }
+
+  .figma-annex-vc__main-title {
+    font-size: clamp(32px, 4.5vw, 64px);
+    height: auto;
+  }
+
+  .figma-annex-vc__sub-title {
+    font-size: clamp(20px, 2.5vw, 36px);
+    height: auto;
+  }
+
+  .figma-annex-vc__description {
+    font-size: clamp(14px, 1.5vw, 20px);
+    height: auto;
+  }
+}
