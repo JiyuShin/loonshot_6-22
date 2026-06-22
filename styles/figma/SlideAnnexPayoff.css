@@ -72,7 +72,7 @@
     width: 1034.14px; /* 0.8x scaled from 1292.68px */
     height: 616.82px; /* 0.8x scaled from 771.02px */
     left: calc(50% - 1034.14px / 2); /* Perfectly centered horizontally */
-    top: 115px; /* Shifted up from 145px to position content higher and look beautifully balanced */
+    top: calc(50% - 616.82px / 2 - 100px);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -342,5 +342,31 @@
     height: auto !important;
     white-space: normal !important;
     color: #000000 !important;
+  }
+}
+
+/* Full SVG replacement: keep the supplied 1293x772 viewBox intact. */
+.figma-annex-payoff__replacement-svg {
+  width: 100%;
+  aspect-ratio: 1293 / 772;
+}
+
+.figma-annex-payoff__replacement-svg svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-width: 1201px) {
+  .figma-annex-payoff__wrapper {
+    height: auto;
+    aspect-ratio: 1293 / 772;
+    gap: 0;
+  }
+}
+
+@media (max-width: 1200px) {
+  .figma-annex-payoff__replacement-svg {
+    max-width: 100%;
   }
 }
