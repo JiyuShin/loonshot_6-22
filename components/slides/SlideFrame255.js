@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import Frame255ContentSvg from "@/components/slides/Frame255ContentSvg";
 
+const INITIAL_SCROLL_LOCK_MS = 3000;
+
 export default function SlideFrame255() {
   const [scrollStep, setScrollStep] = useState(0);
   const [isActive, setIsActive] = useState(false);
@@ -56,8 +58,8 @@ export default function SlideFrame255() {
       const now = Date.now();
       const timeSinceActive = now - slideActiveTime.current;
 
-      // 1. Absorb scroll momentum from the previous slide transition (1000ms)
-      if (timeSinceActive < 1000) {
+      // Wait for the full SVG entrance sequence before the intermediate scroll state can start.
+      if (timeSinceActive < INITIAL_SCROLL_LOCK_MS) {
         e.preventDefault();
         return;
       }
@@ -93,8 +95,8 @@ export default function SlideFrame255() {
       const now = Date.now();
       const timeSinceActive = now - slideActiveTime.current;
 
-      // Absorb rapid key presses immediately after entering slide
-      if (timeSinceActive < 1000) {
+      // Wait for the full SVG entrance sequence before the intermediate key state can start.
+      if (timeSinceActive < INITIAL_SCROLL_LOCK_MS) {
         e.preventDefault();
         e.stopPropagation();
         return;
@@ -133,7 +135,23 @@ export default function SlideFrame255() {
       <div className="figma-frame255__bg" aria-hidden="true" />
 
       <div className="figma-slide__inner figma-frame255__content">
-        <Frame255ContentSvg className="figma-frame255__summary-svg" />
+        <div className="figma-frame255__summary-wrap">
+          <Frame255ContentSvg className="figma-frame255__summary-svg" />
+          <h2 className="figma-frame255__step-title" aria-live="polite">
+            <strong>워룸</strong>에서 검증하겠습니다.
+          </h2>
+        </div>
+      </div>
+      <div className="figma-frame255__step-gradient" aria-hidden="true">
+        <svg width="1920" height="706" viewBox="0 0 1920 706" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="1920" height="696" transform="matrix(1 0 0 -1 0 706)" fill="url(#paint0_linear_540_558)" />
+          <defs>
+            <linearGradient id="paint0_linear_540_558" x1="960" y1="59.2643" x2="960" y2="584.865" gradientUnits="userSpaceOnUse">
+              <stop stopColor="#CEE5FF" stopOpacity="0.92" />
+              <stop offset="0.9" stopColor="white" stopOpacity="0" />
+            </linearGradient>
+          </defs>
+        </svg>
       </div>
     </section>
   );

@@ -3,6 +3,7 @@
   position: relative;
   overflow: hidden;
   background: #ffffff;
+  isolation: isolate;
 }
 
 .figma-frame255__bg {
@@ -32,7 +33,7 @@
 
 .figma-frame255__content {
   position: relative;
-  z-index: 1;
+  z-index: 3;
   align-items: center;
   justify-content: center;
   width: min(100%, 1340px);
@@ -42,11 +43,18 @@
   display: flex;
 }
 
+.figma-frame255__summary-wrap {
+  position: relative;
+  width: min(76vw, 1020px);
+  max-height: 76vh;
+  overflow: visible;
+}
+
 .figma-frame255__summary-svg {
   display: block;
-  width: min(76vw, 1020px);
+  width: 100%;
   height: auto;
-  max-height: 76vh;
+  max-height: inherit;
   overflow: visible;
 }
 
@@ -63,7 +71,8 @@
   transform: translateY(22px);
   transition:
     opacity 0.9s ease,
-    transform 1.05s cubic-bezier(.22, 1, .36, 1);
+    transform 1.05s cubic-bezier(.22, 1, .36, 1),
+    filter 0.8s ease;
   transition-delay: var(--rd, 0ms);
 }
 
@@ -75,6 +84,77 @@
 .figma-frame255.on .figma-frame255__svg-reveal {
   opacity: 1;
   transform: none;
+}
+
+.figma-frame255.is-step-1 .figma-frame255__svg-reveal--title {
+  opacity: 0;
+  filter: blur(14px);
+  transform: none;
+  transition-delay: 0ms;
+  transition-duration: 0.8s, 0.8s, 0.8s;
+}
+
+.figma-frame255__step-gradient {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  z-index: 4;
+  width: 1920px;
+  height: 706px;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(-50%);
+  transition:
+    opacity 1.05s ease;
+}
+
+.figma-frame255__step-gradient svg {
+  display: block;
+  width: 1920px;
+  height: 706px;
+  filter: blur(18px);
+  transform: scaleY(1.22);
+  transform-origin: bottom center;
+}
+
+.figma-frame255.is-step-1 .figma-frame255__step-gradient {
+  opacity: 1;
+}
+
+.figma-frame255__step-title {
+  position: absolute;
+  left: 50%;
+  top: 15.5%;
+  z-index: 5;
+  width: 100%;
+  margin: 0;
+  color: #000;
+  font-family: 'Pretendard', var(--sans);
+  font-size: clamp(30px, 3.15vw, 52px);
+  font-weight: 500;
+  line-height: 1.22;
+  letter-spacing: -0.02em;
+  text-align: center;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  filter: blur(12px);
+  pointer-events: none;
+  transition:
+    opacity 0.95s ease,
+    transform 1.05s cubic-bezier(.22, 1, .36, 1),
+    filter 0.95s ease;
+  transition-delay: 120ms;
+}
+
+.figma-frame255__step-title strong {
+  color: #0F2380;
+  font-weight: 700;
+}
+
+.figma-frame255.is-step-1 .figma-frame255__step-title {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+  filter: blur(0);
 }
 
 .figma-frame255__tag {
