@@ -72,7 +72,7 @@
     width: 1034.14px; /* 0.8x scaled from 1292.68px */
     height: 616.82px; /* 0.8x scaled from 771.02px */
     left: calc(50% - 1034.14px / 2); /* Perfectly centered horizontally */
-    top: calc(50% - 616.82px / 2 - 30px);
+    top: calc(50% - 616.82px / 2);
     display: flex;
     flex-direction: column;
     align-items: center;
