@@ -1,6 +1,26 @@
 import { nadellaReplacementSvgContent } from "./nadellaReplacementSvgContent";
 import Silk from "../Silk";
 
+const nadellaMotionLayers = [
+  {
+    className: "figma-nadella__motion-layer figma-nadella__motion-title rv head",
+    style: { "--rd": "800ms" },
+  },
+  {
+    className: "figma-nadella__motion-layer figma-nadella__motion-meta rv soft",
+    style: { "--rd": "1700ms" },
+  },
+  {
+    className: "figma-nadella__motion-layer figma-nadella__motion-table",
+  },
+  {
+    className: "figma-nadella__motion-layer figma-nadella__motion-arrows",
+  },
+  {
+    className: "figma-nadella__motion-layer figma-nadella__motion-pills",
+  },
+];
+
 export default function SlideNadella() {
   return (
     <section className="slide figma-slide figma-nadella figma-silk" data-ch="2" data-title="나델라의 메시지">
@@ -16,11 +36,16 @@ export default function SlideNadella() {
       </div>
 
       <div className="figma-slide__inner figma-nadella__content">
-        <div
-          className="figma-nadella__replacement-svg"
-          aria-hidden="true"
-          dangerouslySetInnerHTML={{ __html: nadellaReplacementSvgContent }}
-        />
+        <div className="figma-nadella__replacement-svg" aria-hidden="true">
+          {nadellaMotionLayers.map((layer) => (
+            <div
+              key={layer.className}
+              className={layer.className}
+              style={layer.style}
+              dangerouslySetInnerHTML={{ __html: nadellaReplacementSvgContent }}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );
