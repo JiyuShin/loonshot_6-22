@@ -9,8 +9,13 @@
 .figma-annex-conductor__bg {
   position: absolute;
   inset: 0;
-  background: radial-gradient(82.19% 129.83% at 0% 0%, rgba(255, 255, 255, 0.47) 0%, rgba(47, 121, 255, 0.47) 45.98%, rgba(182, 194, 255, 0.47) 100%), #FFFFFF;
-  transform: matrix(1, 0, 0, -1, 0, 0);
+  background:
+    radial-gradient(34.82% 32.03% at 104.35% 34.16%, rgba(255, 255, 255, 0.89) 5.36%, rgba(240, 243, 255, 0) 100%),
+    radial-gradient(26.64% 98.21% at 3.46% 78.76%, rgba(255, 255, 255, 0.7) 0%, rgba(229, 238, 255, 0) 100%),
+    linear-gradient(0deg, rgba(215, 225, 254, 0.85) 7.44%, rgba(255, 255, 255, 0) 99.99%),
+    linear-gradient(27.22deg, rgba(218, 230, 255, 0.93) 21.9%, rgba(255, 255, 255, 0) 35.13%),
+    linear-gradient(257.08deg, rgba(255, 255, 255, 0) -2.09%, rgba(218, 223, 255, 0.8) 52.53%, #F2F7FF 94.32%),
+    #FFFFFF;
   z-index: 1;
 }
 
@@ -26,8 +31,24 @@
 }
 
 .figma-annex-conductor .figma-slide__inner {
-  width: min(100%, 1200px) !important;
+  width: min(100%, 1550px) !important;
   max-width: 96% !important;
+}
+
+.figma-annex-conductor__svg-group {
+  display: block;
+  width: min(100%, 1450px);
+  height: auto;
+  line-height: 0;
+  transition: opacity 0.9s ease, transform 1.05s cubic-bezier(.22,1,.36,1), filter 0.8s ease;
+  transition-delay: var(--rd, 0ms);
+}
+
+.figma-annex-conductor__svg-group svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
 }
 
 /* Standardized capsule pill for 관계 명시 (matching Slide 19/20 perfectly) */

@@ -124,7 +124,7 @@ export default function SlideClosing() {
               118년 전, 컨베이어 벨트가 산업의 구조를 바꿨다면
             </h2>
             <h1 className="figma-closing__main-title">
-              <span className="figma-closing__main-title-accent">다음 혁신</span>은 <strong>Seed→Thread→Twin의 Closed Loop</strong>로<br />연결하는 것입니다.
+              <span className="figma-closing__main-title-accent">다음 혁신은</span> <strong>Seed→Thread→Twin의 Closed Loop</strong>로<br />연결하는 것입니다.
             </h1>
           </div>
         </div>

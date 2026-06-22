@@ -68,10 +68,10 @@
 }
 
 .figma-evidence__subtitle {
-  margin: -8px 0 0;
+  margin: -16px 0 0;
   width: 100%;
   font-family: Pretendard, var(--sans);
-  font-weight: 600;
+  font-weight: 400;
   font-size: 17.639px;
   line-height: 29px;
   text-align: center;
@@ -87,7 +87,7 @@
 }
 
 .figma-evidence__video-wrap {
-  width: min(1040px, 85vw, calc((100dvh - 360px) * 3024 / 1646));
+  width: min(1070px, 87vw, calc((100dvh - 340px) * 3024 / 1646));
   aspect-ratio: 3024 / 1646;
   position: relative;
   border-radius: 16px;

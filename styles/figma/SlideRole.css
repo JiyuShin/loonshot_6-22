@@ -75,6 +75,29 @@
   width: 100%;
 }
 
+.figma-role .figma-pill {
+  box-sizing: border-box;
+  width: 187px;
+  height: 43px;
+  padding: 0;
+  border-radius: 21.4666px;
+  font-weight: 400;
+  color: #002C5F;
+  background-image: linear-gradient(90deg, #002C5F 0%, #000 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  box-shadow:
+    inset 0 11.0418px 22.0836px rgba(255, 255, 255, 0.5),
+    inset 0 -2.99048px 23.9238px rgba(255, 255, 255, 1);
+  isolation: isolate;
+}
+
+.figma-role .figma-pill::before {
+  background: linear-gradient(178deg, #fff 0%, #fdfcfb 100%);
+  opacity: 0.1;
+}
+
 .figma-role__bottom-fade {
   position: absolute;
   left: 50%;

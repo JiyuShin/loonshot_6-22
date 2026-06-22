@@ -1,4 +1,6 @@
 import { useEffect, useRef } from "react";
+import EvidenceTagSvg from "./EvidenceTagSvg";
+import EvidenceTitleSvg from "./EvidenceTitleSvg";
 
 export default function SlideEvidence() {
   const sectionRef = useRef(null);
@@ -31,13 +33,11 @@ export default function SlideEvidence() {
       <div className="figma-evidence__bg" aria-hidden="true" />
 
       <div className="figma-slide__inner figma-evidence__content">
-        <div className="figma-pill rv soft" style={{ "--rd": "250ms" }}>
-          Early Evidence • Demo
-        </div>
+        <EvidenceTagSvg className="rv soft" style={{ "--rd": "250ms" }} />
 
         <div className="figma-evidence__header">
           <h2 className="figma-evidence__headline rv head" style={{ "--rd": "600ms" }}>
-            THINKING MACHINE reasoning workspace
+            <EvidenceTitleSvg />
           </h2>
 
           <p className="figma-evidence__subtitle rv soft" style={{ "--rd": "900ms" }}>

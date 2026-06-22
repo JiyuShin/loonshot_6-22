@@ -42,7 +42,7 @@
   width: 1152px;
   height: 270px;
   left: calc(50% - 1152px / 2);
-  top: 275px; /* Moved up from 339px to 275px to match SlideAnnexIntro and look more balanced */
+  top: 255px; /* Keep the group spacing intact while moving it up 20px. */
   z-index: 2;
 }
 
@@ -80,6 +80,49 @@
 
 .figma-annex-vc__pill::before {
   display: none;
+}
+
+.figma-annex-vc__text-group-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  flex: none;
+  transition: opacity 0.9s ease, transform 1.05s cubic-bezier(.22,1,.36,1), filter 0.8s ease;
+  transition-delay: var(--rd, 0ms);
+}
+
+.figma-annex-vc__tag-text {
+  position: absolute;
+  left: 50%;
+  top: 12px;
+  translate: -50% 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: auto;
+  padding: 5px 14px;
+  border-radius: 999px;
+  font-family: 'Pretendard', var(--sans);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 1.2;
+  text-align: center;
+  color: #000000;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  white-space: nowrap;
+  background: linear-gradient(169.38deg, rgba(255, 255, 255, 0.1) 2.63%, rgba(253, 252, 251, 0.1) 92.11%);
+  box-shadow:
+    inset 0 -2px 17px rgba(255, 255, 255, 1),
+    inset 0 8px 16px rgba(255, 255, 255, 0.5),
+    0 4px 10px rgba(0, 44, 95, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  pointer-events: none;
+  transition: opacity 0.9s ease, transform 1.05s cubic-bezier(.22,1,.36,1), filter 0.8s ease;
+  transition-delay: var(--rd, 0ms);
 }
 
 /* Frame 312 - Outer Content Stack */

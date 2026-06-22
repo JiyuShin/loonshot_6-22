@@ -6,8 +6,6 @@ export default function SlideRole() {
     <section className="slide figma-slide figma-role" data-ch="4" data-title="내재화된 프로세스에서 움직인다">
       <div className="figma-role__bg" aria-hidden="true" />
 
-      <div className="figma-role__bottom-fade" aria-hidden="true" />
-
       <div className="figma-slide__inner figma-role__content">
         <div className="figma-role__header">
           <div className="figma-role__intro">

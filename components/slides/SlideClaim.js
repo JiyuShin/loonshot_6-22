@@ -27,7 +27,8 @@ export default function SlideClaim() {
 
           <h2 className="figma-claim__headline rv head" style={{ "--rd": "600ms" }}>
             <span className="figma-claim__headline-muted">디자이너, </span>
-            <span className="figma-claim__headline-accent">연주자에서 지휘자로</span>
+            <span className="figma-claim__headline-accent">연주자에서 지휘자</span>
+            <span className="figma-claim__headline-muted">로</span>
           </h2>
         </div>
 

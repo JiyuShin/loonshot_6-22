@@ -246,10 +246,10 @@ body.on-dark #nav a.active .dot{background:var(--d-accent-bright);border-color:v
 .flag{background:var(--surface);padding:34px 26px;min-height:240px;display:flex;flex-direction:column;gap:14px;transition:background .5s,transform .5s,box-shadow .5s}
 .flag:hover{background:var(--surface2);transform:translateY(-3px);box-shadow:0 18px 40px rgba(42,37,32,.10)}
 .flag .no{font-size:11px;letter-spacing:.3em;color:var(--accent-bright);font-weight:600}
-.flag h3{font-size:19px;font-weight:600;line-height:1.4;color:var(--ink)}
+.flag h3{font-size:19px;font-weight:600;line-height:1.4;color:#0F2380}
 .flag h3 span{display:block;font-size:11px;letter-spacing:.14em;color:var(--muted);font-weight:400;text-transform:uppercase;margin-top:6px}
 .flag p{font-size:13.5px;color:var(--muted);line-height:1.8;flex:1}
-.flag q{font-size:13px;color:var(--accent);font-weight:500;quotes:"\201C" "\201D";line-height:1.7;opacity:0;transition:opacity 1.2s ease;transition-delay:var(--rq,0ms)}
+.flag q{font-size:13px;color:var(--accent);font-weight:400;quotes:"\201C" "\201D";line-height:1.7;opacity:0;transition:opacity 1.2s ease;transition-delay:var(--rq,0ms)}
 .slide.on .flag q{opacity:1}
 
 /* ---------- ford quote ---------- */

@@ -16,15 +16,16 @@ export default function SlideAnnexIntro() {
           부록
         </div>
 
-        {/* Headline */}
-        <h2 className="figma-annex-intro__headline rv head" style={{ "--rd": "600ms" }}>
-          APPENDIX
-        </h2>
-
-        {/* Summary */}
-        <p className="figma-annex-intro__summary rv head" style={{ "--rd": "900ms" }}>
-          본편에서 압축한 현장 기록과 상세 분석
-        </p>
+        {/* Headline + Summary */}
+        <img
+          className="figma-annex-intro__title-svg rv head"
+          style={{ "--rd": "600ms" }}
+          src="/images/figma/annex-intro-title.svg"
+          width="357"
+          height="135"
+          alt="APPENDIX 본편에서 압축한 현장 기록과 상세 분석"
+          draggable={false}
+        />
       </div>
     </section>
   );

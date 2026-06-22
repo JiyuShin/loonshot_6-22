@@ -22,7 +22,7 @@
 }
 
 .figma-claim__side-image--right {
-  right: calc(-5vw + 90px);
+  right: calc(-5vw + 70px);
   top: calc(8.2vh + 50px);
   height: 88vh;
 }

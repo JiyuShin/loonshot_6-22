@@ -115,6 +115,14 @@
   transition-delay: var(--rd, 0ms);
 }
 
+.figma-annex-intro__title-svg {
+  display: block;
+  width: min(100%, 357px);
+  height: auto;
+  transition: opacity 0.9s ease, transform 1.05s cubic-bezier(.22,1,.36,1), filter 0.8s ease;
+  transition-delay: var(--rd, 0ms);
+}
+
 /* ---------- responsive (mobile/tablet) ---------- */
 @media (max-width: 900px) {
   .figma-annex-intro__content {
