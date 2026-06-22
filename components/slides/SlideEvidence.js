@@ -39,10 +39,6 @@ export default function SlideEvidence() {
           <h2 className="figma-evidence__headline rv head" style={{ "--rd": "600ms" }}>
             <EvidenceTitleSvg />
           </h2>
-
-          <p className="figma-evidence__subtitle rv soft" style={{ "--rd": "900ms" }}>
-            Amore 2030 Brand Strategy in Korea
-          </p>
         </div>
 
         <div className="figma-evidence__video-wrap rv" style={{ "--rd": "1200ms" }}>

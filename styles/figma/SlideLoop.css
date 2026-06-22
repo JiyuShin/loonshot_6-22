@@ -182,10 +182,16 @@
   width: var(--loop-diagram-width);
   min-width: 0;
   max-width: 100%;
-  aspect-ratio: 1753 / 583;
-  margin-top: calc(clamp(16px, 2.5vh, 32px) + 25px);
+  aspect-ratio: 1983 / 748;
+  margin-top: calc(clamp(16px, 2.5vh, 32px) - 5px);
   line-height: 0;
-  transform: translateY(-30px);
+  transform: none;
+  opacity: 0;
+  clip-path: inset(0 100% 0 0);
+  transition:
+    clip-path 2600ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 2200ms ease;
+  transition-delay: 2200ms;
 }
 
 .figma-loop__flow-diagram svg {
@@ -193,6 +199,12 @@
   width: 100%;
   height: auto;
   max-width: 100%;
+  overflow: visible;
+}
+
+.figma-loop.on .figma-loop__flow-diagram {
+  opacity: 1;
+  clip-path: inset(0 0 0 0);
 }
 
 /* ---------- loop · entrance motion ---------- */
@@ -239,6 +251,15 @@
 .figma-loop.on .figma-loop__flow-part {
   opacity: 1;
   filter: blur(0);
+}
+
+.figma-loop__flow-diagram.figma-loop__flow-part {
+  filter: none;
+  transition: opacity 780ms ease;
+}
+
+.figma-loop.on .figma-loop__flow-diagram.figma-loop__flow-part {
+  filter: none;
 }
 
 .figma-loop__flow-part--bg {
