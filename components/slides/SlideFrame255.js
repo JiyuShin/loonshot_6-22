@@ -137,9 +137,26 @@ export default function SlideFrame255() {
       <div className="figma-slide__inner figma-frame255__content">
         <div className="figma-frame255__summary-wrap">
           <Frame255ContentSvg className="figma-frame255__summary-svg" />
-          <h2 className="figma-frame255__step-title" aria-live="polite">
-            <strong>워룸</strong>에서 검증하겠습니다.
-          </h2>
+          <svg
+            className="figma-frame255__step-title-svg"
+            viewBox="0 0 1340 839"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <text
+              x="670"
+              y="151"
+              textAnchor="middle"
+              fontFamily="Pretendard, sans-serif"
+              fontSize="70"
+              fontWeight="500"
+              letterSpacing="-1.4"
+            >
+              <tspan fill="#0F2380" fontWeight="700">워룸</tspan>
+              <tspan fill="#000000">에서 검증하겠습니다.</tspan>
+            </text>
+          </svg>
         </div>
       </div>
       <div className="figma-frame255__step-gradient" aria-hidden="true">
