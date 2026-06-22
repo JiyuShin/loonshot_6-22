@@ -43,12 +43,9 @@ function RiskSystemDiagram() {
         <text className="figma-risk__system-kicker figma-risk__system-kicker--medium" x="361" y="50">정의</text>
         <text className="figma-risk__system-kicker figma-risk__system-kicker--medium figma-risk__system-kicker--layer" x="739" y="50">성격</text>
 
-        <text className="figma-risk__system-title" x="26" y="133">심장</text>
-        <text className="figma-risk__system-title-en" x="84" y="133">Heart</text>
-        <text className="figma-risk__system-title" x="26" y="235">뇌</text>
-        <text className="figma-risk__system-title-en" x="60" y="235">Brain</text>
-        <text className="figma-risk__system-title" x="26" y="337">면역체계</text>
-        <text className="figma-risk__system-title-en" x="145" y="337">Immune System</text>
+        <text className="figma-risk__system-title" x="26" y="133">엔진</text>
+        <text className="figma-risk__system-title" x="26" y="235">판단체계</text>
+        <text className="figma-risk__system-title" x="26" y="337">생태계</text>
 
         <text className="figma-risk__system-def" x="361" y="133">외부 범용 모델</text>
         <text className="figma-risk__system-def" x="361" y="235">우리 자료로 학습된 브랜드 판단 AI</text>
