@@ -1,5 +1,4 @@
 import NecessityBottomCardSvg from "./NecessityBottomCardSvg";
-import NecessitySubDescSvg from "./NecessitySubDescSvg";
 import React from "react";
 
 export default function SlideNecessity() {
@@ -77,10 +76,11 @@ export default function SlideNecessity() {
           <span className="figma-quote-mark">”</span>
         </h2>
 
-        <NecessitySubDescSvg
-          className="figma-necessity__sub-desc rv"
-          style={{ "--rd": "850ms" }}
-        />
+        <p className="figma-necessity__sub-desc rv" style={{ "--rd": "850ms" }}>
+          AI 전환의 속도는 이미 경쟁력 격차로 이어지고 있습니다.
+          <br />
+          그러나 현재 모든 OEM은 여전히 'Time to Market' 단축을 목표로 동일한 경쟁 구도 안에서 속도 경쟁을 벌이고 있습니다.
+        </p>
 
         <div className="figma-necessity__cards">
           {cardsData.map((card, idx) => (

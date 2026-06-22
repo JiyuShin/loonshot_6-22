@@ -104,12 +104,16 @@
 }
 
 .figma-ownership__summary {
-  display: block;
-  width: min(100%, 42em, calc(clamp(14px, 1.25vw, 17px) * 723 / 17));
-  height: auto;
-  aspect-ratio: 723 / 49;
-  margin: clamp(16px, 2.5vh, 28px) 0 0;
-  overflow: visible;
+  width: min(100%, 1077px);
+  margin: clamp(16px, 2.5vh, 28px) auto 0;
+  color: #000;
+  font-family: var(--sans);
+  font-size: clamp(15px, 1.25vw, 19px);
+  font-weight: 400;
+  line-height: 1.45;
+  letter-spacing: -0.02em;
+  text-align: center;
+  word-break: keep-all;
 }
 
 .figma-ownership__diagram-wrap {

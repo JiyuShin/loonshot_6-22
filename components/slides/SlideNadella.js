@@ -1,5 +1,4 @@
-import NadellaDiagramSvg from "./NadellaDiagramSvg";
-import NadellaSubDescSvg from "./NadellaSubDescSvg";
+import { nadellaReplacementSvgContent } from "./nadellaReplacementSvgContent";
 import Silk from "../Silk";
 
 export default function SlideNadella() {
@@ -17,20 +16,12 @@ export default function SlideNadella() {
       </div>
 
       <div className="figma-slide__inner figma-nadella__content">
-        <h2 className="figma-nadella__quote rv head" style={{ "--rd": "800ms" }}>
-          <span className="figma-quote-mark">“</span>
-          <span className="figma-nadella__quote-regular">디자인 생성형 AI의 </span>
-          <span className="figma-nadella__quote-highlight">내재화</span>
-          <span className="figma-quote-mark">”</span>
-        </h2>
-
-        <NadellaSubDescSvg
-          className="figma-nadella__meta rv soft"
-          style={{ "--rd": "1700ms" }}
+        <div
+          className="figma-nadella__replacement-svg"
+          aria-hidden="true"
+          dangerouslySetInnerHTML={{ __html: nadellaReplacementSvgContent }}
         />
       </div>
-
-      <NadellaDiagramSvg className="figma-nadella__diagram figma-nadella__table-reveal" />
     </section>
   );
 }

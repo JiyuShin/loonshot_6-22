@@ -1,5 +1,3 @@
-import OwnershipSummarySvg from "./OwnershipSummarySvg";
-
 function OwnershipLoopDiagram() {
   return (
     <svg
@@ -103,10 +101,11 @@ export default function SlideOwnership() {
           <span className="figma-ownership__headline-highlight">뛰어넘는 방법</span>
         </h2>
 
-        <OwnershipSummarySvg
-          className="figma-ownership__summary rv"
-          style={{ "--rd": "1100ms" }}
-        />
+        <p className="figma-ownership__summary rv" style={{ "--rd": "1100ms" }}>
+          단순히 Time to Market을 위해 AI를 도입하는 것이 아닙니다.
+          <br />
+          Closed Loop 안에서 공급자와 소비자가 유연하게 연결되고 그 과정과 결과가 '우리'의 자산으로 축적되는 것입니다.
+        </p>
 
         <div className="figma-ownership__diagram-wrap">
           <img

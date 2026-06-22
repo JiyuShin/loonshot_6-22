@@ -9,7 +9,7 @@ export default function SlideFord() {
       <div className="figma-ford__bg-wrap" aria-hidden="true">
         <img
           className="figma-ford__bg-image"
-          src="/images/figma/2.png"
+          src="/m3.png"
           alt=""
         />
       </div>
