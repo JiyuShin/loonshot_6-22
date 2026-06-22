@@ -1,9 +1,23 @@
 /* ---------- annex rendersmith (page 22) ---------- */
 .figma-annex-rendersmith {
-  background: radial-gradient(82.19% 129.83% at 0% 0%, rgba(255, 255, 255, 0.47) 0%, rgba(47, 121, 255, 0.47) 45.98%, rgba(182, 194, 255, 0.47) 100%), #FFFFFF;
+  background: #ffffff;
   transform: matrix(1, 0, 0, -1, 0, 0);
   position: relative;
   overflow: hidden;
+}
+
+.figma-annex-rendersmith__bg {
+  position: absolute;
+  inset: 0;
+  transform: matrix(1, 0, 0, -1, 0, 0);
+  background:
+    radial-gradient(34.82% 32.03% at 104.35% 34.16%, rgba(255, 255, 255, 0.89) 5.36%, rgba(240, 243, 255, 0) 100%),
+    radial-gradient(26.64% 98.21% at 3.46% 78.76%, rgba(255, 255, 255, 0.7) 0%, rgba(229, 238, 255, 0) 100%),
+    linear-gradient(0deg, rgba(215, 225, 254, 0.85) 7.44%, rgba(255, 255, 255, 0) 99.99%),
+    linear-gradient(27.22deg, rgba(218, 230, 255, 0.93) 21.9%, rgba(255, 255, 255, 0) 35.13%),
+    linear-gradient(257.08deg, rgba(255, 255, 255, 0) -2.09%, rgba(218, 223, 255, 0.8) 52.53%, #F2F7FF 94.32%),
+    #FFFFFF;
+  z-index: 1;
 }
 
 /* We create a non-flipped container inside to make sure the content displays correctly,
@@ -515,5 +529,83 @@
     line-height: 1.5 !important;
     color: #000 !important;
     margin: 0;
+  }
+}
+
+/* Exact Figma SVG replacement. The same vector is clipped into the original
+   motion groups so text remains sharp while the reveal sequence is preserved. */
+.figma-annex-rendersmith__svg-stage {
+  position: relative;
+  aspect-ratio: 1377 / 695;
+  overflow: visible;
+  isolation: isolate;
+}
+
+.figma-annex-rendersmith__svg-layer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.figma-annex-rendersmith__svg-layer img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  user-select: none;
+}
+
+.figma-annex-rendersmith__tag-overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 4;
+  width: 22.15%;
+  aspect-ratio: 306 / 50;
+  height: auto;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+}
+
+.figma-annex-rendersmith__svg-layer--header {
+  clip-path: inset(9.3% 0 66.8% 0);
+}
+
+.figma-annex-rendersmith__svg-layer--card-1 {
+  clip-path: inset(40.15% 75.55% 29.1% 0);
+}
+
+.figma-annex-rendersmith__svg-layer--card-2 {
+  clip-path: inset(40.15% 49.85% 29.1% 25.55%);
+}
+
+.figma-annex-rendersmith__svg-layer--card-3 {
+  clip-path: inset(40.15% 25.55% 29.1% 51.25%);
+}
+
+.figma-annex-rendersmith__svg-layer--card-4 {
+  clip-path: inset(40.15% 0 29.1% 75.55%);
+}
+
+.figma-annex-rendersmith__svg-layer--thread {
+  clip-path: inset(74.35% 0 0 0);
+}
+
+@media (min-width: 1201px) {
+  .figma-annex-rendersmith__svg-stage {
+    position: absolute;
+    width: min(78vw, 1115.78px);
+    left: 50%;
+    top: 105px;
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 1200px) {
+  .figma-annex-rendersmith__svg-stage {
+    width: min(100%, 960px);
+    margin: 0 auto;
   }
 }

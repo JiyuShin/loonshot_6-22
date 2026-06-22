@@ -20,11 +20,184 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   height: 100%;
   padding: 0 !important;
   position: relative;
   z-index: 2;
+}
+
+.figma-annex-milestone__stage {
+  position: relative;
+  width: min(72vw, 1040px);
+  aspect-ratio: 1193 / 526;
+  transform: translateY(-7%);
+}
+
+.figma-annex-milestone__replacement-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.figma-annex-milestone__replacement-svg svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  overflow: visible;
+}
+
+.figma-annex-milestone__warroom-svg {
+  position: absolute;
+  left: 50%;
+  top: calc(52% + 112px);
+  width: min(82%, 860px);
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, -42%) translateY(42px) scale(0.965);
+  filter: blur(16px);
+  pointer-events: none;
+  transition:
+    opacity 1.35s ease 520ms,
+    transform 1.45s cubic-bezier(.22, 1, .36, 1) 520ms,
+    filter 1.25s ease 520ms,
+    visibility 0s linear 1.9s;
+}
+
+.figma-annex-milestone__warroom-svg svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.figma-annex-milestone__svg-kicker,
+.figma-annex-milestone__svg-title,
+.figma-annex-milestone__svg-subtitle,
+.figma-annex-milestone__svg-graph {
+  opacity: 0;
+}
+
+.figma-annex-milestone__svg-kicker,
+.figma-annex-milestone__svg-title,
+.figma-annex-milestone__svg-subtitle {
+  transform: translateY(12px);
+}
+
+.figma-annex-milestone__svg-graph {
+  clip-path: inset(0 100% 0 0);
+  transform: translateX(-14px);
+  transform-box: fill-box;
+  transform-origin: left center;
+  transition:
+    opacity 1.35s ease 520ms,
+    transform 1.45s cubic-bezier(.22, 1, .36, 1) 520ms,
+    filter 1.25s ease 520ms,
+    clip-path 1.45s cubic-bezier(.22, 1, .36, 1) 520ms;
+}
+
+.figma-annex-milestone__svg-subtitle {
+  transition:
+    opacity 1.35s ease 520ms,
+    transform 1.45s cubic-bezier(.22, 1, .36, 1) 520ms,
+    filter 1.25s ease 520ms;
+}
+
+.figma-annex-milestone.is-step-1 .figma-annex-milestone__svg-subtitle {
+  animation: figma-annex-milestone-fade-out-up 1.35s ease 520ms forwards !important;
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+.figma-annex-milestone.is-step-1 .figma-annex-milestone__svg-graph {
+  animation: figma-annex-milestone-graph-fade-out 1.45s cubic-bezier(.22, 1, .36, 1) 520ms forwards !important;
+  opacity: 1;
+  clip-path: inset(0 0 0 0);
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+.figma-annex-milestone.is-step-1 .figma-annex-milestone__warroom-svg {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -42%) translateY(0) scale(1);
+  filter: blur(0);
+  transition:
+    opacity 1.35s ease 520ms,
+    transform 1.45s cubic-bezier(.22, 1, .36, 1) 520ms,
+    filter 1.25s ease 520ms,
+    visibility 0s linear 0s;
+}
+
+.slide.on .figma-annex-milestone__svg-kicker {
+  animation: figma-annex-milestone-fade-up 700ms cubic-bezier(0.22, 1, 0.36, 1) 160ms forwards;
+}
+
+.slide.on .figma-annex-milestone__svg-title {
+  animation: figma-annex-milestone-fade-up 760ms cubic-bezier(0.22, 1, 0.36, 1) 620ms forwards;
+}
+
+.slide.on .figma-annex-milestone__svg-subtitle {
+  animation: figma-annex-milestone-fade-up 760ms cubic-bezier(0.22, 1, 0.36, 1) 1120ms forwards;
+}
+
+.slide.on .figma-annex-milestone__svg-graph {
+  animation: figma-annex-milestone-graph-reveal 1150ms cubic-bezier(0.22, 1, 0.36, 1) 1720ms forwards;
+}
+
+@keyframes figma-annex-milestone-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes figma-annex-milestone-fade-out-up {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(0) scale(1);
+    filter: blur(16px);
+  }
+}
+
+@keyframes figma-annex-milestone-graph-fade-out {
+  from {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+  to {
+    opacity: 0;
+    clip-path: inset(0 0 0 0);
+    transform: translateY(0) scale(1);
+    filter: blur(16px);
+  }
+}
+
+@keyframes figma-annex-milestone-graph-reveal {
+  from {
+    opacity: 0;
+    clip-path: inset(0 100% 0 0);
+    transform: translateX(-14px);
+  }
+  to {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+    transform: translateX(0);
+  }
 }
 
 /* ============================================================
@@ -873,4 +1046,10 @@
     font-size: 20px;
     line-height: 1.4;
   }
+}
+
+.figma-annex-milestone .figma-annex-milestone__content {
+  justify-content: center;
+  padding: 0 !important;
+  overflow: hidden;
 }

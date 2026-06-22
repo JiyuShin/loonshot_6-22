@@ -1,8 +1,21 @@
 /* ---------- annex design-ai-workflow ---------- */
 .figma-annex-design-ai {
-  background: radial-gradient(82.19% 129.83% at 0% 0%, rgba(255, 255, 255, 0.47) 0%, rgba(47, 121, 255, 0.47) 45.98%, rgba(182, 194, 255, 0.47) 100%), #FFFFFF;
+  background: #ffffff;
   position: relative;
   overflow: hidden;
+}
+
+.figma-annex-design-ai__bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(34.82% 32.03% at 104.35% 34.16%, rgba(255, 255, 255, 0.89) 5.36%, rgba(240, 243, 255, 0) 100%),
+    radial-gradient(26.64% 98.21% at 3.46% 78.76%, rgba(255, 255, 255, 0.7) 0%, rgba(229, 238, 255, 0) 100%),
+    linear-gradient(0deg, rgba(215, 225, 254, 0.85) 7.44%, rgba(255, 255, 255, 0) 99.99%),
+    linear-gradient(27.22deg, rgba(218, 230, 255, 0.93) 21.9%, rgba(255, 255, 255, 0) 35.13%),
+    linear-gradient(257.08deg, rgba(255, 255, 255, 0) -2.09%, rgba(218, 223, 255, 0.8) 52.53%, #F2F7FF 94.32%),
+    #FFFFFF;
+  z-index: 1;
 }
 
 .figma-annex-design-ai * {

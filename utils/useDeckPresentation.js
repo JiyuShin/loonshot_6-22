@@ -31,6 +31,9 @@ const LOOP_STAGES = [
   }
 ];
 
+const ANNEX_MILESTONE_READY_MS = 3000;
+const ANNEX_MILESTONE_STEP_HOLD_MS = 1800;
+
 export function useDeckPresentation(deckRef) {
   useEffect(() => {
     const deck = deckRef.current;
@@ -109,10 +112,75 @@ export function useDeckPresentation(deckRef) {
       slides[next].scrollIntoView({ behavior: "smooth" });
     };
 
+    const getNearestSlide = () => {
+      const top = deck.scrollTop;
+      return slides.reduce((nearest, slide) => {
+        if (!nearest) return slide;
+        return Math.abs(slide.offsetTop - top) < Math.abs(nearest.offsetTop - top) ? slide : nearest;
+      }, null);
+    };
+
+    const setAnnexMilestoneStep = (slide, step) => {
+      slide.classList.toggle("is-step-1", step === 1);
+      slide.dataset.annexMilestoneStep = String(step);
+      slide.dataset.annexMilestoneStepAt = String(Date.now());
+    };
+
+    const handleAnnexMilestoneWheelGate = (event) => {
+      const slide = getNearestSlide();
+      if (!slide || !slide.classList.contains("figma-annex-milestone")) return;
+
+      const step = slide.dataset.annexMilestoneStep === "1" || slide.classList.contains("is-step-1") ? 1 : 0;
+      const elapsed = Date.now() - Number(slide.dataset.annexMilestoneStepAt || 0);
+      const enteredElapsed = Date.now() - Number(slide.dataset.annexMilestoneEnteredAt || 0);
+
+      if (event.deltaY > 0 && step === 0 && enteredElapsed < ANNEX_MILESTONE_READY_MS) {
+        event.preventDefault();
+        event.stopPropagation();
+        event.stopImmediatePropagation?.();
+        slide.scrollIntoView({ behavior: "auto", block: "start" });
+        return;
+      }
+
+      if (event.deltaY > 0 && step === 0) {
+        event.preventDefault();
+        event.stopPropagation();
+        event.stopImmediatePropagation?.();
+        slide.scrollIntoView({ behavior: "auto", block: "start" });
+        setAnnexMilestoneStep(slide, 1);
+        return;
+      }
+
+      if (event.deltaY > 0 && step === 1 && elapsed < ANNEX_MILESTONE_STEP_HOLD_MS) {
+        event.preventDefault();
+        event.stopPropagation();
+        event.stopImmediatePropagation?.();
+        slide.scrollIntoView({ behavior: "auto", block: "start" });
+        return;
+      }
+
+      if (event.deltaY < 0 && step === 1) {
+        event.preventDefault();
+        event.stopPropagation();
+        event.stopImmediatePropagation?.();
+        slide.scrollIntoView({ behavior: "auto", block: "start" });
+        setAnnexMilestoneStep(slide, 0);
+      }
+    };
+
+    deck.addEventListener("wheel", handleAnnexMilestoneWheelGate, { passive: false, capture: true });
+    cleanups.push(() => deck.removeEventListener("wheel", handleAnnexMilestoneWheelGate, { capture: true }));
+
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.intersectionRatio >= 0.5) {
+            if (entry.target.classList.contains("figma-annex-milestone") && !entry.target.classList.contains("on")) {
+              entry.target.classList.remove("is-step-1");
+              entry.target.dataset.annexMilestoneStep = "0";
+              entry.target.dataset.annexMilestoneEnteredAt = String(Date.now());
+              delete entry.target.dataset.annexMilestoneStepAt;
+            }
             entry.target.classList.add("on");
             startCounts(entry.target);
             cur = slides.indexOf(entry.target);
@@ -126,6 +194,12 @@ export function useDeckPresentation(deckRef) {
             if (hint) hint.style.opacity = cur > 0 ? "0" : "";
           } else if (entry.intersectionRatio <= 0.05 && entry.target.classList.contains("on")) {
             entry.target.classList.remove("on");
+            if (entry.target.classList.contains("figma-annex-milestone")) {
+              entry.target.classList.remove("is-step-1");
+              delete entry.target.dataset.annexMilestoneStep;
+              delete entry.target.dataset.annexMilestoneStepAt;
+              delete entry.target.dataset.annexMilestoneEnteredAt;
+            }
             resetCounts(entry.target);
           }
         });
@@ -216,9 +290,47 @@ export function useDeckPresentation(deckRef) {
 
     const onKeyDown = (event) => {
       if (["ArrowDown", "ArrowRight", "PageDown", " "].includes(event.key)) {
+        const slide = getNearestSlide();
+        if (slide?.classList.contains("figma-annex-milestone")) {
+          const step = slide.dataset.annexMilestoneStep === "1" || slide.classList.contains("is-step-1") ? 1 : 0;
+          const elapsed = Date.now() - Number(slide.dataset.annexMilestoneStepAt || 0);
+          const enteredElapsed = Date.now() - Number(slide.dataset.annexMilestoneEnteredAt || 0);
+
+          if (step === 0 && enteredElapsed < ANNEX_MILESTONE_READY_MS) {
+            event.preventDefault();
+            slide.scrollIntoView({ behavior: "auto", block: "start" });
+            return;
+          }
+
+          if (step === 0) {
+            event.preventDefault();
+            slide.scrollIntoView({ behavior: "auto", block: "start" });
+            setAnnexMilestoneStep(slide, 1);
+            return;
+          }
+
+          if (elapsed < ANNEX_MILESTONE_STEP_HOLD_MS) {
+            event.preventDefault();
+            slide.scrollIntoView({ behavior: "auto", block: "start" });
+            return;
+          }
+        }
+
         event.preventDefault();
         go(cur + 1);
       } else if (["ArrowUp", "ArrowLeft", "PageUp"].includes(event.key)) {
+        const slide = getNearestSlide();
+        if (slide?.classList.contains("figma-annex-milestone")) {
+          const step = slide.dataset.annexMilestoneStep === "1" || slide.classList.contains("is-step-1") ? 1 : 0;
+
+          if (step === 1) {
+            event.preventDefault();
+            slide.scrollIntoView({ behavior: "auto", block: "start" });
+            setAnnexMilestoneStep(slide, 0);
+            return;
+          }
+        }
+
         event.preventDefault();
         go(cur - 1);
       } else if (event.key === "Home") {

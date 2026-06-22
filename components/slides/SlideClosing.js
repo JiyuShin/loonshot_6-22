@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 import ClosingBottomTextSvg from "@/components/slides/ClosingBottomTextSvg";
 import ClosingLoopSvg from "@/components/slides/ClosingLoopSvg";
 
+const STEP_TRANSITION_HOLD_MS = 1800;
+
 export default function SlideClosing() {
   const [scrollStep, setScrollStep] = useState(0);
   const [isActive, setIsActive] = useState(false);
@@ -54,15 +56,20 @@ export default function SlideClosing() {
           scrollStepRef.current = 1;
           setScrollStep(1);
           lastStepChangeTime.current = now;
+          el.scrollIntoView({ behavior: "auto", block: "start" });
           e.preventDefault();
-        } else if (timeSinceLastStep < 1000) {
+          e.stopPropagation();
+        } else if (timeSinceLastStep < STEP_TRANSITION_HOLD_MS) {
           e.preventDefault();
+          e.stopPropagation();
         }
       } else if (e.deltaY < 0 && scrollStepRef.current === 1) {
         scrollStepRef.current = 0;
         setScrollStep(0);
         lastStepChangeTime.current = now;
+        el.scrollIntoView({ behavior: "auto", block: "start" });
         e.preventDefault();
+        e.stopPropagation();
       }
     };
 
@@ -84,7 +91,7 @@ export default function SlideClosing() {
           lastStepChangeTime.current = now;
           e.preventDefault();
           e.stopPropagation();
-        } else if (timeSinceLastStep < 1000) {
+        } else if (timeSinceLastStep < STEP_TRANSITION_HOLD_MS) {
           e.preventDefault();
           e.stopPropagation();
         }
